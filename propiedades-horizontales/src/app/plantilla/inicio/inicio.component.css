@@ -1,0 +1,8 @@
+.parallax {
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.card-panel {
+    font-family: cursive;
+    font-size: small; 
+}
