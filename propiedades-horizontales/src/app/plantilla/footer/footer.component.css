@@ -1,6 +1,5 @@
 /* si desea, cambiar tamaño de la pantalla en esta línea */
-.page-footer {
+footer.page-footer {
     font-family: cursive;
     font-size: large;
-    height: 300px;
 }
