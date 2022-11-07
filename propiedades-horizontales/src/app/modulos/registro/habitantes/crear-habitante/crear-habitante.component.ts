@@ -10,6 +10,17 @@ export class CrearHabitanteComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
-
 }
+
+/*document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems, Option);
+});
+
+// Or with jQuery
+
+$(document).ready(function(){
+  $('select').formSelect();
+})*/

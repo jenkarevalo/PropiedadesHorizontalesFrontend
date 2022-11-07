@@ -1,3 +1,7 @@
-.valign-wrapper {
-    height: 100vh;
-  }
+#login-page {
+   width: 500px;
+}
+.input-field {
+    font-family: cursive;
+    font-size: medium;
+}
