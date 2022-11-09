@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       .subscribe((datos) => {
         alert('Todo bien' + datos);
       }, (error) => {
-        console.log("Error validando las credenciales: " + error)
+        console.log("Error validando las credenciales del usuario: " + error)
       });
   }    
 
