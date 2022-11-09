@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SeguridadService } from 'src/app/servicios/seguridad.service';
+const cryptoJS = require('crypto-js');
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  formValidador: FormGroup = this.formBuilder.group({
+    'usuario': ['', [Validators.required]],
+    'clave': ['', Validators.required]
+  });
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private seguridadService: SeguridadService
+  ) { }
 
   ngOnInit(): void {
   }
+
+  login() {
+    let usuario = this.formValidador.controls["usuario"].value;
+    let clave = this.formValidador.controls["clave"].value;
+    clave = cryptoJS.MDS(clave).toString();
+    this. seguridadService.validarUsuario(usuario, clave)
+      .subscribe((datos) => {
+        alert('Todo bien' + datos);
+      }, (error) => {
+        console.log("Error validando las credenciales: " + error)
+      });
+  }    
 
 }

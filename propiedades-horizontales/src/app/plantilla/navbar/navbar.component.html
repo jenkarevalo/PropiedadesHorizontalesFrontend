@@ -5,12 +5,13 @@
 <nav>
     <nav class="black">
         <div class="nav-wrapper">
+            <a routerLink="/inicio"></a>
             <img class="responsivbe-img z-depth-2" src="../../../assets/Logo.jpg" alt="Logo pagina" width="225" height="125" />
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="">Administrador</a></li>
-                <li><a href="">Propietarios</a></li>
-                <li><a href="../../modulos/registro/habitantes/crear-habitante/crear-habitante.component.html">Habitantes</a></li>
-                <li><a class="btn grey darken-2 waves-effect waves-light" href="../../modulos/seguridad/login/login.component.html">Iniciar Sesión</a></li>
+                <li><a routerLink="">Administrador</a></li>
+                <li><a routerLink="">Propietarios</a></li>
+                <li><a routerLink="/habitantes/crearHabitante">Habitantes</a></li>
+                <li><a routerLink="/seguridad/login" class="btn grey darken-2 waves-effect waves-light">Iniciar Sesión</a></li>
             </ul>
         </div>
     </nav>

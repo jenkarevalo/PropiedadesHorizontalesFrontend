@@ -8,11 +8,6 @@ const routes: Routes = [
     path:"inicio",
     component: InicioComponent
   },
-  /*{
-    path:"",
-    pathMatch: "full",
-    redirecTo: "/inicio"
-  },*/
   {
     path:"seguridad",
     loadChildren: () => import("./modulos/seguridad/seguridad.module").then(x => x.SeguridadModule)

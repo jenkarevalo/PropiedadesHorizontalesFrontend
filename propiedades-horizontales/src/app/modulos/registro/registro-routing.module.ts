@@ -6,15 +6,15 @@ import { EditarHabitanteComponent } from './habitantes/editar-habitante/editar-h
 
 const routes: Routes = [
   {
-    path: "crear-habitante",
+    path: "crearHabitante",
     component: CrearHabitanteComponent
   },
   {
-    path: "editar-habitante",
+    path: "editarHabitante",
     component: EditarHabitanteComponent
   },
   {
-    path: "buscar-habitante",
+    path: "buscarHabitante",
     component: BuscarHabitanteComponent
   }
 ];
