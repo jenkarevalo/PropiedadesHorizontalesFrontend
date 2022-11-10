@@ -8,10 +8,24 @@
             <a routerLink="/inicio"></a>
             <img class="responsivbe-img z-depth-2" src="../../../assets/Logo.jpg" alt="Logo pagina" width="225" height="125" />
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a routerLink="">Administrador</a></li>
-                <li><a routerLink="">Propietarios</a></li>
-                <li><a routerLink="/registro/habitantes/crearHabitante">Habitantes</a></li>
-                <li><a routerLink="/seguridad/login" class="btn grey darken-2 waves-effect waves-light">Iniciar Sesión</a></li>
+                <li>
+                    <a routerLink="">Administrador</a>
+                </li>
+                <li>
+                    <a routerLink="">Propietarios</a>
+                </li>
+                <li *ngIf="seInicioSesion===true">
+                    <a routerLink="/registro/habitantes/crearHabitante">Habitantes</a>
+                </li>
+                <li *ngIf="seInicioSesion===true">
+                    <a routerLink="">Conjunto</a>
+                </li>
+                <li *ngIf="seInicioSesion===false">
+                    <a routerLink="/seguridad/login" class="btn grey darken-2 waves-effect waves-light">Iniciar Sesión</a>
+                </li>
+                <li *ngIf="seInicioSesion===true">
+                    <a (click)="cerrarSesion()">Cerrar Sesion</a>
+                </li>
             </ul>
         </div>
     </nav>
