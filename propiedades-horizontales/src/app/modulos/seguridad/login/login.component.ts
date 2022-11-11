@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this. seguridadService.validarUsuario(usuario, clave)
       .subscribe((datos) => {
         this.seguridadService.almacenarSesion(datos);
-        //alert('Todo bien' + datos);
+        alert('Todo bien' + datos);
       }, (error) => {
         console.log(`Error validando las credenciales del usuario: ${error.toString()}`);
       });
