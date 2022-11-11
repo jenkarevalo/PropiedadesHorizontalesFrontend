@@ -10,7 +10,7 @@ import { HabitantesService } from 'src/app/servicios/habitantes.service';
 export class BuscarHabitanteComponent implements OnInit {
   listadoHabitantes: HabitanteModelo[] = [];
   constructor(
-    private HabitantesService: HabitantesService
+    private habitantesService: HabitantesService
   ) {
     this.getListadoHabitantes();
    }
@@ -19,7 +19,7 @@ export class BuscarHabitanteComponent implements OnInit {
   }
 
   getListadoHabitantes(){
-    this.HabitantesService.getHabitantes()
+    this.habitantesService.getHabitantes()
       .subscribe( (habitantes: HabitanteModelo[]) => {
         this.listadoHabitantes = habitantes;
       });
