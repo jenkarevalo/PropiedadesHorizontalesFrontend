@@ -17,7 +17,6 @@ import { CrearPropietarioComponent } from './propietario/crear-propietario/crear
 import { BuscarPropietarioComponent } from './propietario/buscar-propietario/buscar-propietario.component';
 import { EditarPropietarioComponent } from './propietario/editar-propietario/editar-propietario.component';
 
-
 @NgModule({
   declarations: [
     CrearHabitanteComponent,

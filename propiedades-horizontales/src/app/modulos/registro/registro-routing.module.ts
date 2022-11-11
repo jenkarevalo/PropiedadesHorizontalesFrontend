@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BuscarConjuntoComponent } from './conjunto/buscar-conjunto/buscar-conjunto.component';
 import { CrearConjuntoComponent } from './conjunto/crear-conjunto/crear-conjunto.component';
