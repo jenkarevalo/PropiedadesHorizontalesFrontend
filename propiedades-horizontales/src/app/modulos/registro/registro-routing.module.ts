@@ -6,6 +6,9 @@ import { EditarConjuntoComponent } from './conjunto/editar-conjunto/editar-conju
 import { BuscarHabitanteComponent } from './habitantes/buscar-habitante/buscar-habitante.component';
 import { CrearHabitanteComponent } from './habitantes/crear-habitante/crear-habitante.component';
 import { EditarHabitanteComponent } from './habitantes/editar-habitante/editar-habitante.component';
+import { BuscarPropietarioComponent } from './propietario/buscar-propietario/buscar-propietario.component';
+import { CrearPropietarioComponent } from './propietario/crear-propietario/crear-propietario.component';
+import { EditarPropietarioComponent } from './propietario/editar-propietario/editar-propietario.component';
 
 const routes: Routes = [
   {
@@ -31,7 +34,21 @@ const routes: Routes = [
   {
     path: "buscar-Conjunto",
     component: BuscarConjuntoComponent
-  }
+  },
+
+  { 
+    path: "crear-Propietario",
+    component: CrearPropietarioComponent
+  },
+  {
+    path: "editar-Propietario",
+    component: EditarPropietarioComponent
+  },
+  {
+    path: "buscar-Propietario",
+    component: BuscarPropietarioComponent
+  },
+
 ];
 
 @NgModule({
