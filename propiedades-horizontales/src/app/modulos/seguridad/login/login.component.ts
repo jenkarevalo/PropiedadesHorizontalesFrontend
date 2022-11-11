@@ -26,13 +26,14 @@ export class LoginComponent implements OnInit {
   login() {
     let usuario = this.formValidador.controls["usuario"].value;
     let clave = this.formValidador.controls["clave"].value;
-    clave = cryptoJS.MDS(clave).toString();
-    this. seguridadService.validarUsuario(usuario, clave)
-      .subscribe((datos) => {
-        alert('Todo bien' + datos);
-      }, (error) => {
-        console.log("Error validando las credenciales del usuario: " + error)
-      });
+    clave = cryptoJS.MD5(clave).toString();
+    alert (clave);
+    //this. seguridadService.validarUsuario(usuario, clave)
+    //  .subscribe((datos) => {
+    //    alert('Todo bien' + datos);
+    //  }, (error) => {
+    //    console.log("Error validando las credenciales del usuario: " + error)
+    //  });
   }    
 
 }

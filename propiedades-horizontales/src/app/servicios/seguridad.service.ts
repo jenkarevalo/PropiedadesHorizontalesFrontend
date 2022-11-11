@@ -27,4 +27,13 @@ export class SeguridadService {
       }
     );
   }
+
+  almacenarSesion(datos:LoginModelo){ 
+  datos.enSesion= true;
+  localStorage.setItem("datosSesion", JSON.stringify(datos));
+}
+  obtenerInformacion(){
+    let StringDatos
+  }
+
 }

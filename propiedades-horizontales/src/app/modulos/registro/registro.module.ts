@@ -11,6 +11,9 @@ import { EditarComponent } from './administrador/editar/editar.component';
 import { CrearTorreComponent } from './torre/crear-torre/crear-torre.component';
 import { CrearConjuntoComponent } from './conjunto/crear-conjunto/crear-conjunto.component';
 import { CrearApartamentoComponent } from './apartamento/crear-apartamento/crear-apartamento.component';
+import { BuscarPropietarioComponent } from './propietario/buscar-propietario/buscar-propietario.component';
+import { CrearPropietarioComponent } from './propietario/crear-propietario/crear-propietario.component';
+import { EditarPropietarioComponent } from './propietario/editar-propietario/editar-propietario.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { CrearApartamentoComponent } from './apartamento/crear-apartamento/crear
     EditarComponent,
     CrearTorreComponent,
     CrearConjuntoComponent,
-    CrearApartamentoComponent
+    CrearApartamentoComponent,
+    BuscarPropietarioComponent,
+    CrearPropietarioComponent,
+    EditarPropietarioComponent
   ],
   imports: [
     CommonModule,
