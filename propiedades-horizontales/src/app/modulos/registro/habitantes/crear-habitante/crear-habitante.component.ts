@@ -10,6 +10,6 @@ export class CrearHabitanteComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
-
 }

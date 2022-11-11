@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { LoginModelo } from 'src/app/modelos/login.modelo';
+import { SeguridadService } from 'src/app/servicios/seguridad.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +10,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  seInicioSesion: boolean = false;
+  subs: Subscription = new Subscription();
 
-  constructor() { }
+  constructor(
+  private seguridadService: SeguridadService,
+  private route: Router
+  ){ }
 
   ngOnInit(): void {
+    console.log(`En Sesion ${this.seInicioSesion}`);
+    this.subs = this.seguridadService.getDatosUsuarioEnSesion()
+      .subscribe((datos: LoginModelo) => {
+        this.seInicioSesion = datos.enSesion != null ? datos.enSesion: false;
+        this.route.navigate(["/habitantes/crear-Habitante"]);
+        this.route.navigate(["/Conjunto/buscar-Conjunto"]);
+      });
   }
 
+  cerrarSesion(){
+    this.seguridadService.eliminarSesion();
+    this.seInicioSesion = false;
+    this.route.navigate(['/inicio']);
+  }
 }
