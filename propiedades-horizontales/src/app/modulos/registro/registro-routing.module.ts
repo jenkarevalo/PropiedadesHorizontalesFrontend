@@ -16,7 +16,7 @@ const routes: Routes = [
     component: CrearHabitanteComponent
   },
   {
-    path: "editar-Habitante",
+    path: "editar-Habitante/:id",
     component: EditarHabitanteComponent
   },
   {
@@ -53,6 +53,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class RegistroRoutingModule { }
