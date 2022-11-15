@@ -1,3 +1,52 @@
 
-<p *ngFor="let propietario of listadoPropietarios">{{propietario.primerNombre}}</p>
+<div class="row center">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="../../../../../assets/Habitantes.jpg">
+          <span class="card-title">Lista de Propietarios</span>
+        </div>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>Primer Nombre</th>
+              <th>Segundo Nombre</th>
+              <th>Primer Apellido</th>
+              <th>Segundo Apellido</th>
+              <th>Documento</th>
+              <th>Telefono</th>
+              <th>Email</th>
+              <th>clave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let prop of listadoPropietarios">        
+              <td>{{prop.primerNombre}}</td>
+              <td>{{prop.segundoNombre}}</td>
+              <td>{{prop.primerApellido}}</td>
+              <td>{{prop.segundoApellido}}</td>
+              <td>{{prop.documento}}</td>
+              <td>{{prop.telefono}}</td>
+              <td>{{prop.email}}</td>
+              <td>{{prop.clave}}</td>
+              <td>
+                <a routerLink="/registro/editar-Propietario/{{prop.id}}">
+                  <span>Editar</span>
+                </a>
+              </td>
+              <td>
+                <a routerLink="/registro/eliminar-Propietario">
+                  <span>Eliminar</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="card-action">
+          <a class="waves-effect waves-light black btn" routerLink="/registro/Propietario/crear-Propietario">Registrar
+            Propietario</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
