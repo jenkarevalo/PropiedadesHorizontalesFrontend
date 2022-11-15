@@ -21,7 +21,8 @@ export class HabitantesService {
   crearHabitante(habitante: HabitanteModelo): Observable<HabitanteModelo>{
     return this.http.post<HabitanteModelo>(`${this.url}/habitantes`, habitante,{
       headers: new HttpHeaders({
-        'Authorization': `Bearer $(this.token)}`
+        'Authorization': `Bearer ${this.token}`
+
       })
     });
   }
@@ -29,7 +30,7 @@ export class HabitantesService {
   actualizarHabitante(habitante: HabitanteModelo): Observable<HabitanteModelo>{
     return this.http.put<HabitanteModelo>(`${this.url}/habitantes/${habitante.id}`, habitante,{
       headers: new HttpHeaders({
-        'Authorization': 'Bearer $(this.token)}'
+        'Authorization': `Bearer ${this.token}`
       })
     });
   }

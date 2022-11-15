@@ -29,12 +29,21 @@ export class ConjuntoService {
   actualizarConjunto(conjunto: ConjuntoModelo): Observable<ConjuntoModelo>{
     return this.http.put<ConjuntoModelo>(`${this.url}/conjuntos/${conjunto.id}`, conjunto,{
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token }`
+        'Authorization': `Bearer ${this.token}`
+
       })
     });
   }
 
   getConjuntos(): Observable<ConjuntoModelo[]>{
     return this.http.get<ConjuntoModelo[]>(`${this.url}/conjuntos`);
+  }
+
+  eliminarConjunto(id: string): Observable<any>{
+    return this.http.delete<ConjuntoModelo>(`${this.url}/conjuntos/${id}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    });
   }
 }
