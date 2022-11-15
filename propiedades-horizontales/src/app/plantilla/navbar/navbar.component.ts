@@ -23,8 +23,9 @@ export class NavbarComponent implements OnInit {
     this.subs = this.seguridadService.getDatosUsuarioEnSesion()
       .subscribe((datos: LoginModelo) => {
         this.seInicioSesion = datos.enSesion != null ? datos.enSesion: false;
-        this.route.navigate(["/habitantes/crear-Habitante"]);
-        this.route.navigate(["/Conjunto/buscar-Conjunto"]);
+        this.route.navigate(["/habitantes/buscar-Habitante"]);
+        this.route.navigate(["/conjunto/buscar-Conjunto"]);
+        this.route.navigate(["/propietario/buscar-Propietario"]);
       });
   }
 
