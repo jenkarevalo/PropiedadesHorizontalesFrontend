@@ -18,6 +18,7 @@ import { BuscarPropietarioComponent } from './propietario/buscar-propietario/bus
 import { EditarPropietarioComponent } from './propietario/editar-propietario/editar-propietario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     CrearHabitanteComponent,

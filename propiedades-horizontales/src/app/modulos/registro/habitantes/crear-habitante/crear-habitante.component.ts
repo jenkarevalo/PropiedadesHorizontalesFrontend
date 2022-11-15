@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HabitanteModelo } from 'src/app/modelos/habitantes.modelo';
 import { HabitantesService } from 'src/app/servicios/habitantes.service';
-const cryptoJS = require('creypto-js');
+const cryptoJS = require('crypto-js');
 
 @Component({
   selector: 'app-crear-habitante',
@@ -15,6 +15,7 @@ export class CrearHabitanteComponent implements OnInit {
     'Primer Nombre': ['', [Validators.required]],
     'Segundo Nombre': ['', [Validators.required]],
     'Primer Apellido': ['', [Validators.required]],
+    'Segundo Apellido': ['', [Validators.required]],
     'Documento': ['', [Validators.required]],
     'Telefono': ['', [Validators.required]],
     'Email': ['', [Validators.required]],
@@ -28,7 +29,6 @@ export class CrearHabitanteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
   }
 
   guardarHabitante() {
@@ -40,7 +40,7 @@ export class CrearHabitanteComponent implements OnInit {
       documento: this.formHabitante.controls['documento'].value,
       telefono: this.formHabitante.controls['telefono'].value,
       email: this.formHabitante.controls['email'].value,
-      clave: cryptoJS.MD5(this.formHabitante.controls['clave'].value),toString()
+      clave: cryptoJS.MD5(this.formHabitante.controls['clave'].value).toString()
     }
     this.habitanteService.crearHabitante(habitante)
       .subscribe({

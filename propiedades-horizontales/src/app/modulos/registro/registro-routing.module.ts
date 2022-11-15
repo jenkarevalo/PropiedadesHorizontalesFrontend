@@ -20,7 +20,7 @@ const routes: Routes = [
     component: EditarHabitanteComponent
   },
   {
-    path: "buscar-Habitante",
+    path: "habitantes/buscar-Habitante",
     component: BuscarHabitanteComponent
   },
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
     component: EditarConjuntoComponent
   },
   {
-    path: "buscar-Conjunto",
+    path: "conjunto/buscar-Conjunto",
     component: BuscarConjuntoComponent
   },
 
