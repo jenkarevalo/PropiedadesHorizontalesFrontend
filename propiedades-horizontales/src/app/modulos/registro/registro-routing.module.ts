@@ -45,7 +45,7 @@ const routes: Routes = [
     component: EditarPropietarioComponent
   },
   {
-    path: "buscar-Propietario",
+    path: "propietario/buscar-Propietario",
     component: BuscarPropietarioComponent
   },
 

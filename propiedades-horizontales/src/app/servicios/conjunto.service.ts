@@ -30,6 +30,7 @@ export class ConjuntoService {
     return this.http.put<ConjuntoModelo>(`${this.url}/conjuntos/${conjunto.id}`, conjunto,{
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
+
       })
     });
   }

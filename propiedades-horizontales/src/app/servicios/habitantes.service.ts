@@ -22,6 +22,7 @@ export class HabitantesService {
     return this.http.post<HabitanteModelo>(`${this.url}/habitantes`, habitante,{
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
+
       })
     });
   }
