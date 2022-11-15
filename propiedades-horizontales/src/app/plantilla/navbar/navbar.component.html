@@ -9,16 +9,13 @@
             <img class="responsivbe-img z-depth-2" src="../../../assets/Logo.jpg" alt="Logo pagina" width="225" height="125" />
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
-                    <a routerLink="">Administrador</a>
-                </li>
-                <li>
                     <a routerLink="">Propietarios</a>
                 </li>
                 <li *ngIf="seInicioSesion===true">
                     <a routerLink="/registro/habitantes/buscar-Habitante">Habitantes</a>
                 </li>
                 <li *ngIf="seInicioSesion===true">
-                    <a routerLink="/registro/conjunto/buscar-Conjunto">Conjunto</a>
+                    <a routerLink="/registro/conjunto/buscar-Conjunto">Administrador(Conjunto)</a>
                 </li>
                 <li *ngIf="seInicioSesion===false">
                     <a routerLink="/seguridad/login" class="btn grey darken-2 waves-effect waves-light">Iniciar Sesión</a>
