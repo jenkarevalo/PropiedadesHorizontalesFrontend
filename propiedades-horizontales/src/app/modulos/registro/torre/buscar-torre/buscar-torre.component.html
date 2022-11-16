@@ -1,0 +1,26 @@
+<div class="mt-5">
+    <a class="waves-effect waves-light btn-large" routerLink= "/registro/crear-torre">Registrar Torre</a>
+</div>
+
+<table>
+    <thead>
+      <tr>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>ConjuntoId</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let tor of listadoTorres">
+        <td>{{tor.nombre}}</td>
+        <td>{{tor.descripcion}}</td>
+        <td>{{tor.conjuntoId}}</td>
+        <td>
+            <a routerLink="/registro/editar-torre/{{tor.id}}">
+                <samp>Editar</samp>>
+            </a>
+        </td>
+      </tr>
+    </tbody>
+</table>

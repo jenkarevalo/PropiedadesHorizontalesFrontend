@@ -1,9 +1,10 @@
 <div class="row">
     <form [formGroup]="formApartamento" (ngSubmit)="guardarApartamento" class="col s12">
+    <input formControlName="id" type="text" readonly>
       <div class="row">
         <div class="input-field col s6">
           <input formControlName="numero" id="numero" type="text" data-length="10">
-          <label for="numero">Numero</label>
+          <label for="numero" class="active">Numero</label>
         </div>
       </div>
       <div class="row">
