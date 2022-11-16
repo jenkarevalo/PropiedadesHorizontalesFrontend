@@ -18,24 +18,31 @@ export class HabitantesService {
     this.token = this.seguridadService.obtenerToken();
   }
 
-  crearHabitante(habitante: HabitanteModelo): Observable<HabitanteModelo>{
-    return this.http.post<HabitanteModelo>(`${this.url}/habitantes`, habitante,{
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`
-
-      })
-    });
-  }
-
-  actualizarHabitante(habitante: HabitanteModelo): Observable<HabitanteModelo>{
-    return this.http.put<HabitanteModelo>(`${this.url}/habitantes/${habitante.id}`, habitante,{
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`
-      })
-    });
-  }
-
-  getHabitantes(): Observable<HabitanteModelo[]>{
+  getHabitantes(): Observable<HabitanteModelo[]> {
     return this.http.get<HabitanteModelo[]>(`${this.url}/habitantes`);
+  }
+
+  crearHabitante(habitante: HabitanteModelo): Observable<HabitanteModelo> {
+    return this.http.post<HabitanteModelo>(`${this.url}/habitantes`, habitante, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`,
+      })
+    });
+  }
+
+  actualizarHabitante(habitante: HabitanteModelo): Observable<HabitanteModelo> {
+    return this.http.put<HabitanteModelo>(`${this.url}/habitantes/${habitante.id}`, habitante, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`,
+      })
+    });
+  }
+
+  getHabitanteXId(id:string): Observable<HabitanteModelo> {
+    return this.http.get<HabitanteModelo>(`${this.url}/habitantes/${id}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`,
+      })
+    });
   }
 }

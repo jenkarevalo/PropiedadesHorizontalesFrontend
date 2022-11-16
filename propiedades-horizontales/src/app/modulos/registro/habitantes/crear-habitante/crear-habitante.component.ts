@@ -12,10 +12,10 @@ const cryptoJS = require('crypto-js');
 })
 export class CrearHabitanteComponent implements OnInit {
   formHabitante: FormGroup = this.formBuilder.group({
-    'Primer Nombre': ['', [Validators.required]],
-    'Segundo Nombre': ['', [Validators.required]],
-    'Primer Apellido': ['', [Validators.required]],
-    'Segundo Apellido': ['', [Validators.required]],
+    'primerNombre': ['', [Validators.required]],
+    'segundoNombre': ['', [Validators.required]],
+    'primerApellido': ['', [Validators.required]],
+    'segundoApellido': ['', [Validators.required]],
     'Documento': ['', [Validators.required]],
     'Telefono': ['', [Validators.required]],
     'Email': ['', [Validators.required]],
@@ -32,7 +32,7 @@ export class CrearHabitanteComponent implements OnInit {
   }
 
   guardarHabitante() {
-    let habitante: HabitanteModelo={
+    let habitante: HabitanteModelo = {
       primerNombre: this.formHabitante.controls['primerNombre'].value,
       segundoNombre: this.formHabitante.controls['segundoNombre'].value,
       primerApellido: this.formHabitante.controls['primerApellido'].value,
@@ -45,10 +45,10 @@ export class CrearHabitanteComponent implements OnInit {
     this.habitanteService.crearHabitante(habitante)
       .subscribe({
         next: (datos) => {
-          this.router.navigate(['/modulos/registro/buscar-Habitante']);
+          this.router.navigate(['/registro/buscar-Habitante']);
         },
         error: (error) => {
-          console.log("Error al guardar el habitante")
+          console.log("Error al guardar el habitante");
         }
       });
   }

@@ -1,1 +1,61 @@
-<p>editar-habitante works!</p>
+<section class="container">
+    <div class="row registro-titulo">
+        <div class="col s12">
+            <h2 class="center-align">Regístrate</h2>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="row ">
+        <div class="col s12">
+            <div class="card-panel">
+                <form [formGroup]="formHabitante" (ngSubmit)="guardarHabitante()">
+                    <input formControlName="id" type="text" readonly>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input formControlName="primerNombre" placeholder="" id="primerNombre" type="text" class="validate">
+                            <label for="primerNombre" class="active">Primer Nombre</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="segundoNombre"  placeholder="" id="segundoNombre" type="text" class="validate">
+                            <label for="segundoNombre" class="active">Segundo Nombre</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="primerApellido"  id="primerApellido" type="text" class="validate">
+                            <label for="primerApellido" class="active">Primer Apellido</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="segundoApellido"  id="segundoApellido" type="text" class="validate">
+                            <label for="segundoApellido" class="active">Segundo Apellido</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="documento" id="documento" type="text" class="validate">
+                            <label for="text" class="active">Documento</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="telefono" id="telefono" type="text" class="validate">
+                            <label for="text" class="active">Telefono</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input formControlName="email" id="email" type="email" class="validate">
+                            <label for="email" class="active">Email</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input formControlName="clave" id="clave" type="password" class="validate">
+                            <label for="clave" class="active">clave</label>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="row">
+                            <div class="col s12">
+                                <button [disabled]="!formHabitante.valid" class="btn black waves-effect waves-light" type="submit" name="action">Guardar
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

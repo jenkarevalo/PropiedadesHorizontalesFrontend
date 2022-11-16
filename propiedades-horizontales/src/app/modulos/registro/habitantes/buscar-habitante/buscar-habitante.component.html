@@ -1,10 +1,8 @@
-
-<div class="row center">
-  <div class="col s12 m7">
+<div class="row">
+  <div class="col s12 m11">
     <div class="card">
       <div class="card-image">
         <img src="../../../../../assets/Habitantes.jpg">
-        <span class="card-title">Lista de Habitantes</span>
       </div>
       <table class="striped">
         <thead>
@@ -30,7 +28,7 @@
             <td>{{prop.email}}</td>
             <td>{{prop.clave}}</td>
             <td>
-              <a routerLink="/registro/editar-Habitante/{{prop.id}}">
+              <a routerLink='/registro/editar-Habitante/{{prop.id}}'>
                 <span>Editar</span>
               </a>
             </td>
@@ -42,8 +40,9 @@
           </tr>
         </tbody>
       </table>
+      <br><br>
       <div class="card-action">
-        <a class="waves-effect waves-light black btn" routerLink="/registro/Habitante/crear-Habitante">Registrar
+        <a routerLink="/registro/crear-Habitante" class="btn waves-effect waves-light black">Registrar
           Habitante</a>
       </div>
     </div>
