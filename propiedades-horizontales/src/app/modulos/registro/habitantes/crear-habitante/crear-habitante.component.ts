@@ -22,11 +22,12 @@ export class CrearHabitanteComponent implements OnInit {
     'clave': ['', [Validators.required]],
   });
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private habitanteService: HabitantesService,
-    private router: Router
-  ) { }
+   constructor(
+     private formBuilder: FormBuilder,
+     private habitanteService: HabitantesService,
+     private router: Router
+   ) { }
+
 
   ngOnInit(): void {
   }
@@ -53,3 +54,4 @@ export class CrearHabitanteComponent implements OnInit {
       });
   }
 }
+
