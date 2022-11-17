@@ -20,6 +20,7 @@ import { CrearTorreComponent } from './torre/crear-torre/crear-torre.component';
 import { BuscarTorreComponent } from './torre/buscar-torre/buscar-torre.component';
 import { EditarTorreComponent } from './torre/editar-torre/editar-torre.component';
 
+
 @NgModule({
   declarations: [
     //CrearHabitanteComponent,

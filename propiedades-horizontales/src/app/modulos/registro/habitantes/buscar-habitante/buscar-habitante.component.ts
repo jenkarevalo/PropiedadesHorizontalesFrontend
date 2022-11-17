@@ -8,7 +8,7 @@ import { HabitantesService } from 'src/app/servicios/habitantes.service';
   styleUrls: ['./buscar-habitante.component.css']
 })
 export class BuscarHabitanteComponent implements OnInit {
-  listadoHabitantes: HabitanteModelo[] = [];
+  listadoHabitantes: HabitanteModelo[] = []
   constructor(
     private habitantesService: HabitantesService
   ) {
