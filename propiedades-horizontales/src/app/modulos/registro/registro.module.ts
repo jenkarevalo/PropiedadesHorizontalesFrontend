@@ -17,6 +17,9 @@ import { CrearPropietarioComponent } from './propietario/crear-propietario/crear
 import { BuscarPropietarioComponent } from './propietario/buscar-propietario/buscar-propietario.component';
 import { EditarPropietarioComponent } from './propietario/editar-propietario/editar-propietario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CrearFacturacionComponent } from './facturacion/crear-facturacion/crear-facturacion.component';
+import { BuscarFacturacionComponent } from './facturacion/buscar-facturacion/buscar-facturacion.component';
+import { EditarFacturacionComponent } from './facturacion/editar-facturacion/editar-facturacion.component';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditarConjuntoComponent,
     CrearPropietarioComponent,
     BuscarPropietarioComponent,
-    EditarPropietarioComponent
+    EditarPropietarioComponent,
+    CrearFacturacionComponent,
+    BuscarFacturacionComponent,
+    EditarFacturacionComponent
   ],
   imports: [
     CommonModule,
