@@ -43,11 +43,11 @@ const routes: Routes = [
   },
 
   { 
-    path: "crear-Propietario",
+    path: "crear-propietario",
     component: CrearPropietarioComponent
   },
   {
-    path: "editar-Propietario",
+    path: "editar-Propietario/:id",
     component: EditarPropietarioComponent
   },
   {
