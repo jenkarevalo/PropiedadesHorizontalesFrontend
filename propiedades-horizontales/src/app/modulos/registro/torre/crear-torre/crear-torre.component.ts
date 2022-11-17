@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { TorreModelo } from 'src/app/modelos/torre.modelo';
+import { TorreService } from 'src/app/servicios/torre.service';
 
 @Component({
   selector: 'app-crear-torre',
@@ -6,10 +10,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crear-torre.component.css']
 })
 export class CrearTorreComponent implements OnInit {
-
-  constructor() { }
+  formTorre: FormGroup = this.formBuilder.group({
+    'nombre':['',[Validators.required]],
+    'descrpicion':['',[Validators.required]],
+    'conjutoId':['',[Validators.required]]
+  });
+  constructor(
+    private formBuilder: FormBuilder,
+    private torreService: TorreService,
+    private router : Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  guardarTorre(){
+    let torre: TorreModelo = {
+      nombre: this.formTorre.controls['nombre'].value,
+      descripcion: this.formTorre.controls['descrpicion'].value,
+      conjuntoId: this.formTorre.controls['conjutoId'].value,
+    }
+    // se llama al servicio para guardar los datos
+    this.torreService.crearTorre(torre)
+      .subscribe({
+        next: (datos) => {
+          this.router.navigate(['/registro/buscar-torre']);
+        },
+        error: (error) => {
+          console.log("Error al guardar torre")
+        }
+      }); 
   }
 
 }

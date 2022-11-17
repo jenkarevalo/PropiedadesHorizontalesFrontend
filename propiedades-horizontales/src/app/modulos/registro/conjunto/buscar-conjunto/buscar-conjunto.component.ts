@@ -20,9 +20,12 @@ export class BuscarConjuntoComponent implements OnInit {
 
   getlistadoConjuntos(){
     this.conjuntoService.getConjuntos()
-      .subscribe( (conjuntos: ConjuntoModelo[]) => {
+      .subscribe( (conjuntos: ConjuntoModelo[]) => { 
         this.listadoConjuntos = conjuntos;
-      });
+        console.log("Total de apartamentos" + this.listadoConjuntos.length);
+      }, (error) =>{
+        console.log("Se genero un error al consultar el listado de conjuntos");
+      })
   }
 
 }
