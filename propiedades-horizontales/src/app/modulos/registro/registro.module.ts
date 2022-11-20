@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistroRoutingModule } from './registro-routing.module';
 import { CrearHabitanteComponent } from './habitantes/crear-habitante/crear-habitante.component';
 import { EditarHabitanteComponent } from './habitantes/editar-habitante/editar-habitante.component';
@@ -12,14 +12,15 @@ import { EditarConjuntoComponent } from './conjunto/editar-conjunto/editar-conju
 import { CrearPropietarioComponent } from './propietario/crear-propietario/crear-propietario.component';
 import { BuscarPropietarioComponent } from './propietario/buscar-propietario/buscar-propietario.component';
 import { EditarPropietarioComponent } from './propietario/editar-propietario/editar-propietario.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BuscarApartamentoComponent } from './apartamento/buscar-apartamento/buscar-apartamento.component';
 import { EditarApartamentoComponent } from './apartamento/editar-apartamento/editar-apartamento.component';
 import { CrearApartamentoComponent } from './apartamento/crear-apartamento/crear-apartamento.component';
 import { CrearTorreComponent } from './torre/crear-torre/crear-torre.component';
 import { BuscarTorreComponent } from './torre/buscar-torre/buscar-torre.component';
 import { EditarTorreComponent } from './torre/editar-torre/editar-torre.component';
-
+import { CrearFacturaComponent } from './factura/crear-factura/crear-factura.component';
+import { BuscarFacturaComponent } from './factura/buscar-factura/buscar-factura.component';
+import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +39,12 @@ import { EditarTorreComponent } from './torre/editar-torre/editar-torre.componen
     CrearApartamentoComponent,
     CrearTorreComponent,
     BuscarTorreComponent,
-    EditarTorreComponent
+    EditarTorreComponent,
+    CrearFacturaComponent,
+    BuscarFacturaComponent,
+    EditarFacturaComponent
   ],
+  
   imports: [
     CommonModule,
     RegistroRoutingModule,

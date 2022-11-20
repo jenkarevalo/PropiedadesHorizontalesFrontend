@@ -26,6 +26,8 @@ export class NavbarComponent implements OnInit {
         this.route.navigate(["/habitantes/buscar-Habitante"]);
         this.route.navigate(["/conjunto/buscar-Conjunto"]);
         this.route.navigate(["/propietario/buscar-Propietario"]);
+        this.route.navigate(["/torre/buscar-Torre"]);
+        this.route.navigate(["/apartamento/buscar-Apartamento"]);
       });
   }
 

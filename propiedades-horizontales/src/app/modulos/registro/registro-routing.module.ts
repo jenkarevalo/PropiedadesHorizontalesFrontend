@@ -6,6 +6,9 @@ import { EditarApartamentoComponent } from './apartamento/editar-apartamento/edi
 import { BuscarConjuntoComponent } from './conjunto/buscar-conjunto/buscar-conjunto.component';
 import { CrearConjuntoComponent } from './conjunto/crear-conjunto/crear-conjunto.component';
 import { EditarConjuntoComponent } from './conjunto/editar-conjunto/editar-conjunto.component';
+import { BuscarFacturaComponent } from './factura/buscar-factura/buscar-factura.component';
+import { CrearFacturaComponent } from './factura/crear-factura/crear-factura.component';
+import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.component';
 import { BuscarHabitanteComponent } from './habitantes/buscar-habitante/buscar-habitante.component';
 import { CrearHabitanteComponent } from './habitantes/crear-habitante/crear-habitante.component';
 import { EditarHabitanteComponent } from './habitantes/editar-habitante/editar-habitante.component';
@@ -18,7 +21,8 @@ import { EditarTorreComponent } from './torre/editar-torre/editar-torre.componen
 
 const routes: Routes = [
    {
-     path: "crear-Habitante",
+
+    path: "crear-Habitante",
      component: CrearHabitanteComponent
    },
   {
@@ -30,11 +34,11 @@ const routes: Routes = [
     component: BuscarHabitanteComponent
   },
   {
-    path: "crear-Conjunto",
-    component: CrearConjuntoComponent
+    path: "conjunto/crear-Conjunto",
+    component: CrearConjuntoComponent,
   },
   {
-    path: "editar-Conjunto/: id",
+    path: "conjunto/editar-Conjunto/: id",
     component: EditarConjuntoComponent
   },
   {
@@ -54,7 +58,6 @@ const routes: Routes = [
     path: "propietario/buscar-Propietario",
     component: BuscarPropietarioComponent
   },
-
   { 
     path: "crear-Apartamento",
     component: CrearApartamentoComponent
@@ -64,7 +67,7 @@ const routes: Routes = [
     component: EditarApartamentoComponent
   },
   {
-    path: "buscar-Apartamento",
+    path: "apartamento/buscar-Apartamento",
     component: BuscarApartamentoComponent
   },
 
@@ -77,10 +80,21 @@ const routes: Routes = [
     component: EditarTorreComponent
   },
   {
-    path: "buscar-Torre",
+    path: "torre/buscar-Torre",
     component: BuscarTorreComponent
+  },
+  {
+    path: "crear-Factura",
+     component: CrearFacturaComponent
+   },
+  {
+    path: "editar-Factura/:id",
+    component: EditarFacturaComponent
+  },
+  {
+    path: "factura/buscar-Factura",
+    component: BuscarFacturaComponent
   }
-
 ];
 
 @NgModule({

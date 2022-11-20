@@ -4,9 +4,6 @@ import { PropietarioModelo } from '../modelos/propietario.modelo';
 import { SeguridadService } from './seguridad.service';
 import { Observable } from 'rxjs';
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -24,7 +21,7 @@ export class PropietarioService {
   crearPropietario(propietario: PropietarioModelo): Observable<PropietarioModelo>{
     return this.http.post<PropietarioModelo>(`${this.url}/propietarios`, propietario,{
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`
+        'Authorization': `Bearer $(this.token)}`
       })
     });
   }
@@ -32,7 +29,7 @@ export class PropietarioService {
   actualizarPropietario(propietario: PropietarioModelo): Observable<PropietarioModelo>{
     return this.http.put<PropietarioModelo>(`${this.url}/propietarios/${propietario.id}`, propietario,{
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`
+        'Authorization': `Bearer $(this.token)}`
       })
     });
   }

@@ -1,26 +1,41 @@
-<div class="row">
-    <form [formGroup]="formTorre" (ngSubmit)="guardarTorre" class="col s12">
-    <input formControlName="id" type="text" readonly >
-      <div class="row">
-        <div class="input-field col s6">
-          <input formControlName="nombre" id="nombre" type="text" data-length="10">
-          <label for="numero" class="active" >Nombre</label>
+<section class="container">
+    <div class="row registro-titulo">
+        <div class="col s12">
+            <h2 class="center-align">Regístrate</h2>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input formControlName="descripcion" id="descripcion" type="text" data-length="10">
-          <label for="torreId">Descripcion</label>
+    </div>
+</section>
+<section class="container">
+    <div class="row ">
+        <div class="col s12">
+            <div class="card-panel">
+                <form [formGroup]="formTorre" (ngSubmit)="guardarTorre()">
+                    <input formControlName="id" type="text" readonly>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input formControlName="Nombre" placeholder="" id="Nombre" type="text" class="validate">
+                            <label for="Nombre" class="active">Nombre</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="Descripcion"  placeholder="" id="Descripcion" type="text" class="validate">
+                            <label for="Descripcion" class="active">Descripcion</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input formControlName="ConjuntoId"  id="ConjuntoId" type="text" class="validate">
+                            <label for="ConjuntoId" class="active">Conjunto Id</label>
+                        </div>
+                    </div>
+                    <div class="section">
+                        <div class="row">
+                            <div class="col s12">
+                                <button [disabled]="!formTorre.valid" class="btn black waves-effect waves-light" type="submit" name="action">Guardar
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input formControlName="conjuntoId" id="conjuntoId" type="text" data-length="10">
-          <label for="propietarioId">Conjunto</label>
-        </div>
-      </div>
-      <button [disabled]="!formTorre.valid" class="btn waves-effect waves-light" type="submit" name="action">Guardar
-        <i class="material-icons right">send</i>
-      </button>
-    </form>
-  </div>
+    </div>
+</section>

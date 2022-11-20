@@ -12,9 +12,9 @@ import { ApartamentoService } from 'src/app/servicios/apartamento.service';
 })
 export class CrearApartamentoComponent implements OnInit {
   formApartamento: FormGroup = this.formBuilder.group({
-    'numero':['',[Validators.required]],
-    'torreId':['',[Validators.required]],
-    'propietarioId':['',[Validators.required]]
+    'Numero':['',[Validators.required]],
+    'TorreId':['',[Validators.required]],
+    'PropietarioId':['',[Validators.required]]
   });
   constructor(
     private formBuilder: FormBuilder,
@@ -27,15 +27,15 @@ export class CrearApartamentoComponent implements OnInit {
 
   guardarApartamento(){
     let apartamento: ApartamentoModelo = {
-      numero: this.formApartamento.controls['numero'].value,
-      torreId: this.formApartamento.controls['torreId'].value,
-      propietarioId: this.formApartamento.controls['propietarioId'].value,
+      numero: this.formApartamento.controls['Numero'].value,
+      torreId: this.formApartamento.controls['TorreId'].value,
+      propietarioId: this.formApartamento.controls['PropietarioId'].value,
     }
     // llamar al servicio para guardar la info del apto
     this.apartamentoService.crearApartamento(apartamento)
       .subscribe({
         next: (datos) =>{
-          this.router.navigate(['/registro/buscar-apartamento']);
+          this.router.navigate(['/registro/apartamento/buscar-Apartamento']);
         },
         error: (error) => {
           console.log("Error al guardar el Apartamento");

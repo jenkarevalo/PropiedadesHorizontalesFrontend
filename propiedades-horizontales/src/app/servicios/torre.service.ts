@@ -33,4 +33,8 @@ export class TorreService {
     return this.http.get<TorreModelo>(`${this.url}/torres/${id}`);
   }
 
+  eliminarTorre(id:string): Observable<TorreModelo>{
+    return this.http.delete<TorreModelo>(`${this.url}/torres/${id}`);
+  }
+
 }

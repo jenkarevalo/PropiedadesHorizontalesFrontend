@@ -35,5 +35,7 @@ export class ApartamentoService {
 
   }
 
-
+  eliminarApartamento(id:string): Observable<ApartamentoModelo>{
+    return this.http.delete<ApartamentoModelo>(`${this.url}/apartamentos/${id}`);
+  }
 }

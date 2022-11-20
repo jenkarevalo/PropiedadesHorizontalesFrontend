@@ -17,6 +17,12 @@
                 <li *ngIf="seInicioSesion===true">
                     <a routerLink="/registro/conjunto/buscar-Conjunto">Administrador(Conjunto)</a>
                 </li>
+                <li *ngIf="seInicioSesion===true">
+                    <a routerLink="/registro/torre/buscar-Torre">Torres</a>
+                </li>
+                <li *ngIf="seInicioSesion===true">
+                    <a routerLink="/registro/apartamento/buscar-Apartamento">Apartamentos</a>
+                </li>
                 <li *ngIf="seInicioSesion===false">
                     <a routerLink="/seguridad/login" class="btn grey darken-2 waves-effect waves-light">Iniciar Sesión</a>
                 </li>

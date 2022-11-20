@@ -5,9 +5,6 @@ import { PropietarioModelo } from 'src/app/modelos/propietario.modelo';
 import { PropietarioService } from 'src/app/servicios/propietario.service';
 const cryptoJS = require('crypto-js');
 
-
-
-
 @Component({
   selector: 'app-crear-propietario',
   templateUrl: './crear-propietario.component.html',

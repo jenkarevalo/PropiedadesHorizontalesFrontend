@@ -11,9 +11,9 @@ import { TorreService } from 'src/app/servicios/torre.service';
 })
 export class CrearTorreComponent implements OnInit {
   formTorre: FormGroup = this.formBuilder.group({
-    'nombre':['',[Validators.required]],
-    'descrpicion':['',[Validators.required]],
-    'conjutoId':['',[Validators.required]]
+    'Nombre':['',[Validators.required]],
+    'Descrpicion':['',[Validators.required]],
+    'ConjutoId':['',[Validators.required]]
   });
   constructor(
     private formBuilder: FormBuilder,
@@ -26,15 +26,15 @@ export class CrearTorreComponent implements OnInit {
 
   guardarTorre(){
     let torre: TorreModelo = {
-      nombre: this.formTorre.controls['nombre'].value,
-      descripcion: this.formTorre.controls['descrpicion'].value,
-      conjuntoId: this.formTorre.controls['conjutoId'].value,
+      nombre: this.formTorre.controls['Nombre'].value,
+      descripcion: this.formTorre.controls['Descrpicion'].value,
+      conjuntoId: this.formTorre.controls['ConjutoId'].value,
     }
     // se llama al servicio para guardar los datos
     this.torreService.crearTorre(torre)
       .subscribe({
         next: (datos) => {
-          this.router.navigate(['/registro/buscar-torre']);
+          this.router.navigate(['/registro/torre/buscar-Torre']);
         },
         error: (error) => {
           console.log("Error al guardar torre")
