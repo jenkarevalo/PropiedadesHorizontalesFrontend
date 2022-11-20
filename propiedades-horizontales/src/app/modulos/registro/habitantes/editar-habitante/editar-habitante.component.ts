@@ -14,14 +14,14 @@ export class EditarHabitanteComponent implements OnInit {
 
   formHabitante: FormGroup = this.formBuilder.group({
     'id': ['', [Validators.required]],
-    'primerNombre': ['', [Validators.required]],
-    'segundoNombre': ['', [Validators.required]],
-    'primerApellido': ['', [Validators.required]],
-    'segundoApellido': ['', [Validators.required]],
+    'PrimerNombre': ['', [Validators.required]],
+    'SegundoNombre': ['', [Validators.required]],
+    'PrimerApellido': ['', [Validators.required]],
+    'SegundoApellido': ['', [Validators.required]],
     'Documento': ['', [Validators.required]],
     'Telefono': ['', [Validators.required]],
     'Email': ['', [Validators.required]],
-    'clave': ['', [Validators.required]],
+    'Clave': ['', [Validators.required]],
   });
 
   constructor(
@@ -39,19 +39,19 @@ export class EditarHabitanteComponent implements OnInit {
   guardarHabitante() {
     let habitante: HabitanteModelo = {
       id: this.formHabitante.controls['id'].value,
-      primerNombre: this.formHabitante.controls['primerNombre'].value,
-      segundoNombre: this.formHabitante.controls['segundoNombre'].value,
-      primerApellido: this.formHabitante.controls['primerApellido'].value,
-      segundoApellido: this.formHabitante.controls['segundoApellido'].value,
-      documento: this.formHabitante.controls['documento'].value,
-      telefono: this.formHabitante.controls['telefono'].value,
-      email: this.formHabitante.controls['email'].value,
-      clave: this.formHabitante.controls['clave'].value
+      primerNombre: this.formHabitante.controls['PrimerNombre'].value,
+      segundoNombre: this.formHabitante.controls['SegundoNombre'].value,
+      primerApellido: this.formHabitante.controls['PrimerApellido'].value,
+      segundoApellido: this.formHabitante.controls['SegundoApellido'].value,
+      documento: this.formHabitante.controls['Documento'].value,
+      telefono: this.formHabitante.controls['Telefono'].value,
+      email: this.formHabitante.controls['Email'].value,
+      clave: this.formHabitante.controls['Clave'].value
     }
     this.habitanteService.actualizarHabitante(habitante)
       .subscribe({
         next: (datos) => {
-          this.router.navigate(['/registro/buscar-Habitante']);
+          this.router.navigate(['/registro/habitantes/buscar-Habitante']);
         },
         error: (error) => {
           console.log("Error al guardar el habitante");
@@ -64,14 +64,14 @@ export class EditarHabitanteComponent implements OnInit {
       .subscribe({
         next: (habitante) => {
           this.formHabitante.controls['id'].setValue(habitante.id);
-          this.formHabitante.controls['primerNombre'].setValue(habitante.primerNombre);
-          this.formHabitante.controls['segundoNombre'].setValue(habitante.segundoNombre);
-          this.formHabitante.controls['primerApellido'].setValue(habitante.primerApellido);
-          this.formHabitante.controls['segundoApellido'].setValue(habitante.segundoApellido);
-          this.formHabitante.controls['documento'].setValue(habitante.documento);
-          this.formHabitante.controls['telefono'].setValue(habitante.telefono);
-          this.formHabitante.controls['email'].setValue(habitante.email);
-          this.formHabitante.controls['clave'].setValue(habitante.clave);
+          this.formHabitante.controls['PrimerNombre'].setValue(habitante.primerNombre);
+          this.formHabitante.controls['SegundoNombre'].setValue(habitante.segundoNombre);
+          this.formHabitante.controls['PrimerApellido'].setValue(habitante.primerApellido);
+          this.formHabitante.controls['SegundoApellido'].setValue(habitante.segundoApellido);
+          this.formHabitante.controls['Documento'].setValue(habitante.documento);
+          this.formHabitante.controls['Telefono'].setValue(habitante.telefono);
+          this.formHabitante.controls['Email'].setValue(habitante.email);
+          this.formHabitante.controls['Clave'].setValue(habitante.clave);
         },
         error: (error) => {
           console.log("error al buscar el habitante")

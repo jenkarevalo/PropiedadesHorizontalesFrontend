@@ -8,4 +8,6 @@ export class HabitanteModelo{
     email?: string;
     telefono?: string;
     clave?: string;
+    conjuntoId?: string;
+    apartamentoId?: string;
 }
