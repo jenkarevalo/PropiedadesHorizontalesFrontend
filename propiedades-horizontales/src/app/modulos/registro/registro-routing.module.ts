@@ -6,11 +6,11 @@ import { EditarApartamentoComponent } from './apartamento/editar-apartamento/edi
 import { BuscarConjuntoComponent } from './conjunto/buscar-conjunto/buscar-conjunto.component';
 import { CrearConjuntoComponent } from './conjunto/crear-conjunto/crear-conjunto.component';
 import { EditarConjuntoComponent } from './conjunto/editar-conjunto/editar-conjunto.component';
-import { BuscarFacturacionComponent } from './facturacion/buscar-facturacion/buscar-facturacion.component';
-import { CrearFacturacionComponent } from './facturacion/crear-facturacion/crear-facturacion.component';
-import { EditarFacturacionComponent } from './facturacion/editar-facturacion/editar-facturacion.component';
+import { BuscarFacturaComponent } from './factura/buscar-factura/buscar-factura.component';
+import { CrearFacturaComponent } from './factura/crear-factura/crear-factura.component';
+import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.component';
 import { BuscarHabitanteComponent } from './habitantes/buscar-habitante/buscar-habitante.component';
-//import { CrearHabitanteComponent } from './habitantes/crear-habitante/crear-habitante.component';
+import { CrearHabitanteComponent } from './habitantes/crear-habitante/crear-habitante.component';
 import { EditarHabitanteComponent } from './habitantes/editar-habitante/editar-habitante.component';
 import { BuscarPropietarioComponent } from './propietario/buscar-propietario/buscar-propietario.component';
 import { CrearPropietarioComponent } from './propietario/crear-propietario/crear-propietario.component';
@@ -20,10 +20,10 @@ import { CrearTorreComponent } from './torre/crear-torre/crear-torre.component';
 import { EditarTorreComponent } from './torre/editar-torre/editar-torre.component';
 
 const routes: Routes = [
-  // {
-  //   path: "crear-Habitante",
-  //   component: CrearHabitanteComponent
-  // },
+   {
+    path: "crear-Habitante",
+     component: CrearHabitanteComponent
+   },
   {
     path: "editar-Habitante/:id",
     component: EditarHabitanteComponent
@@ -58,19 +58,6 @@ const routes: Routes = [
     component: BuscarPropietarioComponent
   },
   { 
-    path: "crear-Facturacion",
-    component: CrearFacturacionComponent
-  },
-  {
-    path: "editar-Facturacion",
-    component: EditarFacturacionComponent
-  },
-  {
-    path: "facturacion/buscar-Facturacion",
-    component: BuscarFacturacionComponent
-  },
-
-  { 
     path: "crear-Apartamento",
     component: CrearApartamentoComponent
   },
@@ -94,8 +81,19 @@ const routes: Routes = [
   {
     path: "buscar-Torre",
     component: BuscarTorreComponent
+  },
+  {
+    path: "crear-Factura",
+     component: CrearFacturaComponent
+   },
+  {
+    path: "editar-Factura/:id",
+    component: EditarFacturaComponent
+  },
+  {
+    path: "factura/buscar-Factura",
+    component: BuscarFacturaComponent
   }
-
 ];
 
 @NgModule({

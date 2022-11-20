@@ -45,4 +45,12 @@ export class HabitantesService {
       })
     });
   }
+
+  eliminarHabitante(id: string): Observable<any> {
+    return this.http.delete(`${this.url}/habitantes/${id}`, {
+      headers:  new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`,
+      })
+    });
+  }
 }
