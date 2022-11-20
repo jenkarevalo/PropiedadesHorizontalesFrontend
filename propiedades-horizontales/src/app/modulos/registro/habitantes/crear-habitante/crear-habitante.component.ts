@@ -46,7 +46,7 @@ export class CrearHabitanteComponent implements OnInit {
     this.habitanteService.crearHabitante(habitante)
       .subscribe({
         next: (datos) => {
-          this.router.navigate(['/registro/buscar-Habitante']);
+          this.router.navigate(['/registro/habitante/buscar-Habitante']);
         },
         error: (error) => {
           console.log("Error al guardar el habitante");
