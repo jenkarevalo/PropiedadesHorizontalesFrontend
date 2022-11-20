@@ -12,14 +12,14 @@ const cryptoJS = require('crypto-js');
 })
 export class CrearHabitanteComponent implements OnInit {
   formHabitante: FormGroup = this.formBuilder.group({
-    'primerNombre': ['', [Validators.required]],
-    'segundoNombre': ['', [Validators.required]],
-    'primerApellido': ['', [Validators.required]],
-    'segundoApellido': ['', [Validators.required]],
+    'PrimerNombre': ['', [Validators.required]],
+    'SegundoNombre': ['', [Validators.required]],
+    'PrimerApellido': ['', [Validators.required]],
+    'SegundoApellido': ['', [Validators.required]],
     'Documento': ['', [Validators.required]],
     'Telefono': ['', [Validators.required]],
     'Email': ['', [Validators.required]],
-    'clave': ['', [Validators.required]],
+    'Clave': ['', [Validators.required]],
   });
 
    constructor(
@@ -34,13 +34,13 @@ export class CrearHabitanteComponent implements OnInit {
 
   guardarHabitante() {
     let habitante: HabitanteModelo = {
-      primerNombre: this.formHabitante.controls['primerNombre'].value,
-      segundoNombre: this.formHabitante.controls['segundoNombre'].value,
-      primerApellido: this.formHabitante.controls['primerApellido'].value,
-      segundoApellido: this.formHabitante.controls['segundoApellido'].value,
-      documento: this.formHabitante.controls['documento'].value,
-      telefono: this.formHabitante.controls['telefono'].value,
-      email: this.formHabitante.controls['email'].value,
+      primerNombre: this.formHabitante.controls['PrimerNombre'].value,
+      segundoNombre: this.formHabitante.controls['SegundoNombre'].value,
+      primerApellido: this.formHabitante.controls['PrimerApellido'].value,
+      segundoApellido: this.formHabitante.controls['SegundoApellido'].value,
+      documento: this.formHabitante.controls['Documento'].value,
+      telefono: this.formHabitante.controls['Telefono'].value,
+      email: this.formHabitante.controls['Email'].value,
       clave: cryptoJS.MD5(this.formHabitante.controls['clave'].value).toString()
     }
     this.habitanteService.crearHabitante(habitante)

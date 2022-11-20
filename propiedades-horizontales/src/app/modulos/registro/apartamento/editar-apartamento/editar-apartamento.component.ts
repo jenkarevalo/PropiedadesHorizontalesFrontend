@@ -13,9 +13,9 @@ export class EditarApartamentoComponent implements OnInit {
   id: string= '';
   formApartamento: FormGroup = this.formBuilder.group({
     'id':['',[Validators.required]],
-    'numero':['',[Validators.required]],
-    'torreId':['',[Validators.required]],
-    'propietarioId':['',[Validators.required]]
+    'Numero':['',[Validators.required]],
+    'TorreId':['',[Validators.required]],
+    'PropietarioId':['',[Validators.required]]
   });
   constructor(
     private formBuilder: FormBuilder,
@@ -32,15 +32,15 @@ export class EditarApartamentoComponent implements OnInit {
   guardarApartamento(){
     let apartamento: ApartamentoModelo = {
       id: this.formApartamento.controls['id'].value,
-      numero: this.formApartamento.controls['numero'].value,
-      torreId: this.formApartamento.controls['torreId'].value,
-      propietarioId: this.formApartamento.controls['propietarioId'].value,
+      numero: this.formApartamento.controls['Numero'].value,
+      torreId: this.formApartamento.controls['TorreId'].value,
+      propietarioId: this.formApartamento.controls['PropietarioId'].value,
     }
     // llamar al servicio para guardar la info del apto
     this.apartamentoService.actualizarApartamento(apartamento)
       .subscribe({
         next: (datos) =>{
-          this.router.navigate(['/registro/buscar-apartamento']);
+          this.router.navigate(['/registro/apartamento/buscar-Apartamento']);
         },
         error: (error) => {
           console.log("Error al guardar el Apartamento");
@@ -52,9 +52,9 @@ export class EditarApartamentoComponent implements OnInit {
       .subscribe({
         next: (apartamento) =>{
           this.formApartamento.controls['id'].setValue(apartamento.id);
-          this.formApartamento.controls['numero'].setValue(apartamento.numero);
-          this.formApartamento.controls['torreId'].setValue(apartamento.torreId); 
-          this.formApartamento.controls['propietarioId'].setValue(apartamento.propietarioId);
+          this.formApartamento.controls['Numero'].setValue(apartamento.numero);
+          this.formApartamento.controls['TorreId'].setValue(apartamento.torreId); 
+          this.formApartamento.controls['PropietarioId'].setValue(apartamento.propietarioId);
         },
         error: (error) =>{
           console.log("error al buscar el propietario");

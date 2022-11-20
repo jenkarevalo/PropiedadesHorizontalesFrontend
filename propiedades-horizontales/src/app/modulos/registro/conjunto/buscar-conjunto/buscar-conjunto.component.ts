@@ -12,20 +12,17 @@ export class BuscarConjuntoComponent implements OnInit {
   constructor(
     private conjuntoService: ConjuntoService
   ) {
-    this.getlistadoConjuntos();
+    this.getListadoConjuntos();
    }
 
   ngOnInit(): void {
   }
 
-  getlistadoConjuntos(){
+  getListadoConjuntos(){
     this.conjuntoService.getConjuntos()
-      .subscribe( (conjuntos: ConjuntoModelo[]) => { 
-        this.listadoConjuntos = conjuntos;
-        console.log("Total de apartamentos" + this.listadoConjuntos.length);
-      }, (error) =>{
-        console.log("Se genero un error al consultar el listado de conjuntos");
-      })
-  }
-
+      .subscribe( (conjunto: ConjuntoModelo[]) => {
+        this.listadoConjuntos = conjunto;
+      });
+    }
+    
 }

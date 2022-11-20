@@ -13,9 +13,9 @@ export class EditarTorreComponent implements OnInit {
   id: string= '';
   formTorre: FormGroup = this.formBuilder.group({
     'id':['',[Validators.required]],
-    'nombre':['',[Validators.required]],
-    'descrpicion':['',[Validators.required]],
-    'conjutoId':['',[Validators.required]]
+    'Nombre':['',[Validators.required]],
+    'Descrpicion':['',[Validators.required]],
+    'ConjutoId':['',[Validators.required]]
   });
   constructor(
     private formBuilder: FormBuilder,
@@ -32,15 +32,15 @@ export class EditarTorreComponent implements OnInit {
   guardarTorre(){
     let torre: TorreModelo = {
       id: this.formTorre.controls['id'].value,
-      nombre: this.formTorre.controls['nombre'].value,
-      descripcion: this.formTorre.controls['descrpicion'].value,
-      conjuntoId: this.formTorre.controls['conjutoId'].value,
+      nombre: this.formTorre.controls['Nombre'].value,
+      descripcion: this.formTorre.controls['Descrpicion'].value,
+      conjuntoId: this.formTorre.controls['ConjutoId'].value,
     }
     // se llama al servicio para guardar los datos
     this.torreService.actualizarTorre(torre)
       .subscribe({
         next: (datos) => {
-          this.router.navigate(['/registro/buscar-torre']);
+          this.router.navigate(['/registro/torre/buscar-Torre']);
         },
         error: (error) => {
           console.log("Error al guardar torre")
@@ -53,9 +53,9 @@ export class EditarTorreComponent implements OnInit {
       .subscribe({
         next: (torre) =>{
           this.formTorre.controls['id'].setValue(torre.id);
-          this.formTorre.controls['nombre'].setValue(torre.nombre);
-          this.formTorre.controls['descripcion'].setValue(torre.descripcion); 
-          this.formTorre.controls['conjuntoId'].setValue(torre.conjuntoId);
+          this.formTorre.controls['Nombre'].setValue(torre.nombre);
+          this.formTorre.controls['Descripcion'].setValue(torre.descripcion); 
+          this.formTorre.controls['ConjuntoId'].setValue(torre.conjuntoId);
         },
         error: (error) =>{
           console.log("error al buscar el propietario");
