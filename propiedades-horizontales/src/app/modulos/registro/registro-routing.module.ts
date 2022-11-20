@@ -33,11 +33,11 @@ const routes: Routes = [
     component: BuscarHabitanteComponent
   },
   {
-    path: "crear-Conjunto",
-    component: CrearConjuntoComponent
+    path: "conjunto/crear-Conjunto",
+    component: CrearConjuntoComponent,
   },
   {
-    path: "editar-Conjunto/: id",
+    path: "conjunto/editar-Conjunto/: id",
     component: EditarConjuntoComponent
   },
   {
@@ -66,7 +66,7 @@ const routes: Routes = [
     component: EditarApartamentoComponent
   },
   {
-    path: "buscar-Apartamento",
+    path: "apartamento/buscar-Apartamento",
     component: BuscarApartamentoComponent
   },
 
@@ -79,7 +79,7 @@ const routes: Routes = [
     component: EditarTorreComponent
   },
   {
-    path: "buscar-Torre",
+    path: "torre/buscar-Torre",
     component: BuscarTorreComponent
   },
   {

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './plantilla/error/error.component';
-import { InicioComponent } from './plantilla/inicio/inicio.component';
+import { InicioComponent } from './plantilla/inicio/inicio.component' ;
 
 const routes: Routes = [
   {

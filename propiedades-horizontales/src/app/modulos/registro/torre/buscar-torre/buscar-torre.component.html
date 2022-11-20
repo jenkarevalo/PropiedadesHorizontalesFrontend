@@ -1,26 +1,41 @@
-<div class="mt-5">
-    <a class="waves-effect waves-light btn-large" routerLink= "/registro/crear-torre">Registrar Torre</a>
+<div class="row">
+  <div class="col s12 m11">
+    <div class="card">
+      <div class="card-image">
+        <img src="../../../../../assets/Habitantes.jpg">
+      </div>
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>ConjuntoId</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tor of listadoTorres">
+              <td>{{tor.nombre}}</td>
+              <td>{{tor.descripcion}}</td>
+              <td>{{tor.conjuntoId}}</td>
+            <td>
+              <a routerLink="/registro/editar-Torre/{{tor.id}}">
+                <span>Editar</span>
+              </a>
+            </td>
+            <td>
+              <a routerLink="/registro/eliminar-Torre">
+                <span>Eliminar</span>
+
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br><br>
+      <div class="card-action">
+        <a routerLink="/registro/crear-Torre" class="btn waves-effect waves-light black">Registrar Torre</a>
+      </div>
+    </div>
+  </div>
 </div>
 
-<table>
-    <thead>
-      <tr>
-          <th>Nombre</th>
-          <th>Descripcion</th>
-          <th>ConjuntoId</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr *ngFor="let tor of listadoTorres">
-        <td>{{tor.nombre}}</td>
-        <td>{{tor.descripcion}}</td>
-        <td>{{tor.conjuntoId}}</td>
-        <td>
-            <a routerLink="/registro/editar-torre/{{tor.id}}">
-                <samp>Editar</samp>>
-            </a>
-        </td>
-      </tr>
-    </tbody>
-</table>

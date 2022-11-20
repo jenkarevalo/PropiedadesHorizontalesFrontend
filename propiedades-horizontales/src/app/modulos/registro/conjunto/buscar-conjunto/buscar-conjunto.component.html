@@ -1,2 +1,53 @@
-<p *ngFor="let conjunto of listadoConjuntos">{{conjunto.nombre}}</p>
-
+<div class="row">
+    <div class="col s12 m11">
+      <div class="card">
+        <div class="card-image">
+          <img src="../../../../../assets/Habitantes.jpg">
+        </div>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Nit</th>
+              <th>Cuenta Bancaria</th>
+              <th>Banco</th>
+              <th>Nombre Administrador</th>
+              <th>Interes por Mora</th>
+              <th>Inicio Numero Factura</th>
+              <th>Presupuesto Actual</th>
+              <th>Email</th>
+              <th>Clave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor ="let conjunto of listadoConjuntos" >
+              <td>{{conjunto.nombre}}</td>
+              <td>{{conjunto.nit}}</td>
+              <td>{{conjunto.cuentaBancaria}}</td>
+              <td>{{conjunto.banco}}</td>
+              <td>{{conjunto.nombreAdministrador}}</td>
+              <td>{{conjunto.inicioNumeroFactura}}</td>
+              <td>{{conjunto.presupuestoActual}}</td>
+              <td>{{conjunto.email}}</td>
+              <td>{{conjunto.clave}}</td>
+              <td>
+                <a routerLink='/registro/conjunto/editar-Conjunto/{{conjunto.id}}'>
+                  <span>Editar</span>
+                </a>
+              </td>
+              <td>
+                <a routerLink="/registro/eliminar-Conjunto">
+                  <span>Eliminar</span>
+  
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br><br>
+        <div class="card-action">
+          <a routerLink="/registro/conjunto/crear-Conjunto" class="btn waves-effect waves-light black">Registrar Conjunto</a>
+        </div>
+      </div>
+    </div>
+  </div>
