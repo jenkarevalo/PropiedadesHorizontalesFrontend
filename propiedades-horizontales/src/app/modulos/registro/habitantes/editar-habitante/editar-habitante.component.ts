@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HabitanteModelo } from 'src/app/modelos/habitantes.modelo';
+import { ApartamentoService } from 'src/app/servicios/apartamento.service';
+import { ConjuntoService } from 'src/app/servicios/conjunto.service';
 import { HabitantesService } from 'src/app/servicios/habitantes.service';
 
 @Component({
@@ -22,13 +24,17 @@ export class EditarHabitanteComponent implements OnInit {
     'Telefono': ['', [Validators.required]],
     'Email': ['', [Validators.required]],
     'Clave': ['', [Validators.required]],
+    'Conjunto': ['', [Validators.required]],
+    'Apartamento': ['', [Validators.required]],
   });
 
   constructor(
     private formBuilder: FormBuilder,
     private habitanteService: HabitantesService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private conjuntoService: ConjuntoService,
+    private apartamentoService: ApartamentoService
   ) { }
 
   ngOnInit(): void {
@@ -46,7 +52,9 @@ export class EditarHabitanteComponent implements OnInit {
       documento: this.formHabitante.controls['Documento'].value,
       telefono: this.formHabitante.controls['Telefono'].value,
       email: this.formHabitante.controls['Email'].value,
-      clave: this.formHabitante.controls['Clave'].value
+      clave: this.formHabitante.controls['Clave'].value,
+      conjuntoId: this.formHabitante.controls['Conjunto'].value,
+      apartamentoId: this.formHabitante.controls['Apartamento'].value,
     }
     this.habitanteService.actualizarHabitante(habitante)
       .subscribe({

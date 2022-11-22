@@ -27,7 +27,7 @@ export class EditarFacturaComponent implements OnInit {
     private facturaService: FacturaService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ){ }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -54,7 +54,7 @@ export class EditarFacturaComponent implements OnInit {
       });
   }
 
-  getFactura(){
+  getFactura() {
     this.facturaService.getFacturaXId(this.id)
       .subscribe({
         next: (factura) => {
