@@ -58,7 +58,7 @@ const routes: Routes = [
     component: BuscarPropietarioComponent
   },
   { 
-    path: "crear-Apartamento",
+    path: "apartamento/crear-Apartamento",
     component: CrearApartamentoComponent
   },
   {

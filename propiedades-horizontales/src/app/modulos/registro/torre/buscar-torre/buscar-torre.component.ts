@@ -18,14 +18,21 @@ export class BuscarTorreComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // getListadoTorres(){
+  //   this.torreService.getTorres()
+  //     .subscribe((torres: TorreModelo[])=>{ 
+  //       this.listadoTorres = torres;
+  //       console.log("Total de torres" + this.listadoTorres.length);
+  //     }, (error) =>{
+  //       console.log("Se genero un error al consultar el listado de torres");
+  //     })
+  //}
+
   getListadoTorres(){
-    this.torreService.obtenerTorres()
-      .subscribe((torres: TorreModelo[])=>{ 
+    this.torreService.getTorres()
+      .subscribe( (torres: TorreModelo[]) => {
         this.listadoTorres = torres;
-        console.log("Total de torres" + this.listadoTorres.length);
-      }, (error) =>{
-        console.log("Se genero un error al consultar el listado de torres");
-      })
-  }
+      });
+    }
 
 }

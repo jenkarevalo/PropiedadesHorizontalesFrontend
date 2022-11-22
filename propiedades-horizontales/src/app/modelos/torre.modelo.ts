@@ -3,5 +3,5 @@ export class TorreModelo {
     nombre?: string;
     descripcion?: string;
     conjuntoId?: string;
-    
+    apartamentoId?: string;
 }

@@ -10,4 +10,8 @@ export class ConjuntoModelo {
     presupuestoActual?: number;
     email?: string;
     clave?: string;
+    facturaId? : string;
+    torreId? : string;
+    propietarioId?: string;
+    habitanteId?: string;
 }

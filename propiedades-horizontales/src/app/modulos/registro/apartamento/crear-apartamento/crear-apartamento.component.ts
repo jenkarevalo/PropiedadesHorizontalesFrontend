@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApartamentoModelo } from 'src/app/modelos/apartamento.modelo';
+import { HabitanteModelo } from 'src/app/modelos/habitantes.modelo';
 import { PropietarioModelo } from 'src/app/modelos/propietario.modelo';
 import { TorreModelo } from 'src/app/modelos/torre.modelo';
 import { ApartamentoService } from 'src/app/servicios/apartamento.service';
+import { HabitantesService } from 'src/app/servicios/habitantes.service';
 import { PropietarioService } from 'src/app/servicios/propietario.service';
 import { TorreService } from 'src/app/servicios/torre.service';
 
@@ -15,21 +17,27 @@ import { TorreService } from 'src/app/servicios/torre.service';
   styleUrls: ['./crear-apartamento.component.css']
 })
 export class CrearApartamentoComponent implements OnInit {
-  listadoTorre: TorreModelo [] = [];
-  listadoPropietarios: PropietarioModelo [] = [];
+  listadoTorres: TorreModelo[] = [];
+  listadoPropietarios: PropietarioModelo[]=[];
+  listadoHabitantes: HabitanteModelo[]=[];
 
   formApartamento: FormGroup = this.formBuilder.group({
     'Numero':['',[Validators.required]],
     'TorreId':['',[Validators.required]],
-    'PropietarioId':['',[Validators.required]]
+    'PropietarioId':['',[Validators.required]],
+    'Propietario': ['',[Validators.required]],
+    'Habitante':['',[Validators.required]],
+    'Torre': ['',[Validators.required]]
   });
 
   constructor(
     private formBuilder: FormBuilder,
     private apartamentoService: ApartamentoService,
-    private router : Router,
+
     private torreService: TorreService,
-    private propietarioService: PropietarioService
+    private habitanteService: HabitantesService,
+    private propietarioService: PropietarioService, 
+    private router : Router
   ) { }
 
   ngOnInit(): void {
@@ -56,20 +64,30 @@ export class CrearApartamentoComponent implements OnInit {
   getTorre(){
     this.torreService.getTorres()
       .subscribe({
-        next: (torre) => {
-          this.listadoTorre = torre;
+        next: (torres) =>{
+          this.listadoTorres = torres;
         },
-        error: (error) => console.log("Error al consultar la torre")
+        error: (error)=> console.log("Error al consultar las Torres")  
       })
   }
 
   getPropietario(){
     this.propietarioService.getPropietario()
-      .subscribe({
-        next: (propietario) => {
-          this.listadoPropietarios = propietario;
-        },
-        error: (error) => console.log("Error al consultar el propietario")
-      })
+    .subscribe({
+      next: (propietario) => {
+        this.listadoPropietarios = propietario;
+      },
+      error: (error) => console.log("Error al consultar los Propietarios")
+    })
   }
+
+  getHabitante(){
+    this.habitanteService.getHabitantes()
+      .subscribe({
+        next: (habitante) => {
+          this.listadoHabitantes = habitante;
+        },
+        error: (error) => console.log("Error al consultar los Habitantes")
+      })
+    }
 }

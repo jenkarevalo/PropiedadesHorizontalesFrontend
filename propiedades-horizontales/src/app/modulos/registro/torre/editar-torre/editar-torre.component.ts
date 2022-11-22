@@ -14,8 +14,8 @@ export class EditarTorreComponent implements OnInit {
   formTorre: FormGroup = this.formBuilder.group({
     'id':['',[Validators.required]],
     'Nombre':['',[Validators.required]],
-    'Descrpicion':['',[Validators.required]],
-    'ConjutoId':['',[Validators.required]]
+    'Descripcion':['',[Validators.required]],
+    'ConjuntoId':['',[Validators.required]]
   });
   constructor(
     private formBuilder: FormBuilder,
@@ -33,8 +33,8 @@ export class EditarTorreComponent implements OnInit {
     let torre: TorreModelo = {
       id: this.formTorre.controls['id'].value,
       nombre: this.formTorre.controls['Nombre'].value,
-      descripcion: this.formTorre.controls['Descrpicion'].value,
-      conjuntoId: this.formTorre.controls['ConjutoId'].value,
+      descripcion: this.formTorre.controls['Descripcion'].value,
+      conjuntoId: this.formTorre.controls['ConjuntoId'].value,
     }
     // se llama al servicio para guardar los datos
     this.torreService.actualizarTorre(torre)
@@ -58,7 +58,7 @@ export class EditarTorreComponent implements OnInit {
           this.formTorre.controls['ConjuntoId'].setValue(torre.conjuntoId);
         },
         error: (error) =>{
-          console.log("error al buscar el propietario");
+          console.log("error al buscar el torre");
         }
       })
   }
