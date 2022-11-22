@@ -3,4 +3,5 @@ export class ApartamentoModelo {
     numero?: string;
     torreId?: string;
     propietarioId?: string;
+    habitanteId?: string;
 }

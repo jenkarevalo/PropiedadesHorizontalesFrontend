@@ -13,10 +13,6 @@ export class TorreService {
       private http: HttpClient
   ) { }
   
-  obtenerTorres(): Observable<TorreModelo[]>{
-    return this.http.get<TorreModelo[]>(`${this.url}/torres`);
-  }
-
   crearTorre(torre: TorreModelo): Observable<TorreModelo>{
     return this.http.post<TorreModelo>(`${this.url}/torres`, torre);
   }

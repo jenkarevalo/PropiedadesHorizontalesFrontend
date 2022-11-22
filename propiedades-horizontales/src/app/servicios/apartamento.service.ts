@@ -14,9 +14,9 @@ export class ApartamentoService {
       private http: HttpClient
   ) { }
   
-  obtenerApartamentos(): Observable<ApartamentoModelo[]>{
-    return this.http.get<ApartamentoModelo[]>(`${this.url}/apartamentos`);
-  }
+  // obtenerApartamentos(): Observable<ApartamentoModelo[]>{
+  //   return this.http.get<ApartamentoModelo[]>(`${this.url}/apartamentos`);
+  // }
 
   crearApartamento(apartamento: ApartamentoModelo): Observable<ApartamentoModelo>{
     return this.http.post<ApartamentoModelo>(`${this.url}/apartamentos`, apartamento);
@@ -31,7 +31,7 @@ export class ApartamentoService {
   }
 
   getApartamentoxid(id:string): Observable<ApartamentoModelo>{
-    return this.http.get<ApartamentoModelo>(`${this.url}/torres/${id}`);
+    return this.http.get<ApartamentoModelo>(`${this.url}/apartamentos/${id}`);
 
   }
 

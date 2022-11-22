@@ -35,7 +35,7 @@ export class EditarConjuntoComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.getConjunto();
+    this.getConjuntos();
   }
 
   guardarConjunto() {
@@ -58,31 +58,31 @@ export class EditarConjuntoComponent implements OnInit {
           this.router.navigate(['/registro/conjunto/buscar-Conjunto']);
         },
         error: (error) => {
-          console.log("Error al guardar el CONJUNTO");
+          console.log("Error al guardar el conjunto");
         }
       });
   }
 
-  getConjunto(){
+  getConjuntos(){
     this.conjuntoService.getConjuntoXId(this.id)
-      .subscribe({
-        next: (conjunto) => {
-          this.formConjunto.controls['id'].setValue(conjunto.id);
-          this.formConjunto.controls['Nombre'].setValue(conjunto.nombre);
-          this.formConjunto.controls['Nit'].setValue(conjunto.nit);
-          this.formConjunto.controls['CuentaBancaria'].setValue(conjunto.cuentaBancaria);
-          this.formConjunto.controls['Banco'].setValue(conjunto.banco);
-          this.formConjunto.controls['NombreAdministrador'].setValue(conjunto.nombreAdministrador);
-          this.formConjunto.controls['Telefono'].setValue(conjunto.interesXMora);
-          this.formConjunto.controls['InicioNumeroFactura'].setValue(conjunto.inicioNumeroFactura);
-          this.formConjunto.controls['PresupuestoActual'].setValue(conjunto.presupuestoActual);
-          this.formConjunto.controls['Email'].setValue(conjunto.email);
-          this.formConjunto.controls['Clave'].setValue(conjunto.clave);
-        },
-        error: (error) => {
-          console.log("error al buscar el Cojunto")
-        }
-      });
+    .subscribe({
+      next: (conjunto) =>{
+        this.formConjunto.controls['id'].setValue(conjunto.id);
+        this.formConjunto.controls['Nombre'].setValue(conjunto.nombre);
+        this.formConjunto.controls['Nit'].setValue(conjunto.nit);
+        this.formConjunto.controls['CuentaBancaria'].setValue(conjunto.cuentaBancaria);
+        this.formConjunto.controls['Banco'].setValue(conjunto.banco);
+        this.formConjunto.controls['NombreAdministrador'].setValue(conjunto.nombreAdministrador);
+        this.formConjunto.controls['InteresXMora'].setValue(conjunto.interesXMora);
+        this.formConjunto.controls['InicioNumeroFactura'].setValue(conjunto.inicioNumeroFactura);
+        this.formConjunto.controls['PresupuestoActual'].setValue(conjunto.presupuestoActual);
+        this.formConjunto.controls['Email'].setValue(conjunto.email);
+        this.formConjunto.controls['Clave'].setValue(conjunto.clave);
+      },
+      error: (error)=>{
+        console.log("error al buscar el conjunto");
+      }
+    })
   }
 
 }

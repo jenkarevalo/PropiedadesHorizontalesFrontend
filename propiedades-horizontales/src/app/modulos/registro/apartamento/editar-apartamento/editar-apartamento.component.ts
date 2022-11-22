@@ -57,7 +57,7 @@ export class EditarApartamentoComponent implements OnInit {
           this.formApartamento.controls['PropietarioId'].setValue(apartamento.propietarioId);
         },
         error: (error) =>{
-          console.log("error al buscar el propietario");
+          console.log("error al buscar el apartamento");
         }
       })
   }
