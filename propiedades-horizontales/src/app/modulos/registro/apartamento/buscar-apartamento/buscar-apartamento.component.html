@@ -13,12 +13,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let prop of listadoApartamentos">
-            <td>{{prop.numero}}</td>
-            <td>{{prop.propietarioId}}</td>
-            <td>{{prop.torreId}}</td>
+          <tr *ngFor="let apto of listadoApartamentos">
+            <td>{{apto.numero}}</td>
+            <td>{{apto.torreId}}</td>
+            <td>{{apto.propietarioId}}</td>
             <td>
-              <a routerLink='/registro/editar-Apartamento/{{prop.id}}'>
+              <a routerLink='/registro/editar-Apartamento/{{apto.id}}'>
                 <span>Editar</span>
               </a>
             </td>
@@ -32,7 +32,7 @@
       </table>
       <br><br>
       <div class="card-action">
-        <a routerLink="/registro/apartamento/crear-Apartamento" class="btn waves-effect waves-light black">Registrar
+        <a routerLink="/registro/crear-Apartamento" class="btn waves-effect waves-light black">Registrar
           Apartamento</a>
       </div>
     </div>

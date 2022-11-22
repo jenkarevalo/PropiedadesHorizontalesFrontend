@@ -9,33 +9,37 @@ import { ApartamentoModelo } from '../modelos/apartamento.modelo';
 })
 export class ApartamentoService {
   //url base del servicio 
-    url: string = 'http://localhost:3000';
-    constructor(
-      private http: HttpClient
+  url: string = 'http://localhost:3000';
+
+  constructor(
+    private http: HttpClient
   ) { }
+
   
   // obtenerApartamentos(): Observable<ApartamentoModelo[]>{
   //   return this.http.get<ApartamentoModelo[]>(`${this.url}/apartamentos`);
   // }
 
-  crearApartamento(apartamento: ApartamentoModelo): Observable<ApartamentoModelo>{
+
+  crearApartamento(apartamento: ApartamentoModelo): Observable<ApartamentoModelo> {
     return this.http.post<ApartamentoModelo>(`${this.url}/apartamentos`, apartamento);
   }
-  
-  actualizarApartamento(apartamento: ApartamentoModelo): Observable<ApartamentoModelo>{
-    return this.http.put<ApartamentoModelo>(`${this.url}/torres/${apartamento.id}`, apartamento);
+
+  actualizarApartamento(apartamento: ApartamentoModelo): Observable<ApartamentoModelo> {
+    return this.http.put<ApartamentoModelo>(`${this.url}/apartamentos/${apartamento.id}`, apartamento);
   }
 
-  getApartamento(): Observable<ApartamentoModelo[]>{
+  getApartamento(): Observable<ApartamentoModelo[]> {
     return this.http.get<ApartamentoModelo[]>(`${this.url}/apartamentos`);
   }
+
 
   getApartamentoxid(id:string): Observable<ApartamentoModelo>{
     return this.http.get<ApartamentoModelo>(`${this.url}/apartamentos/${id}`);
 
   }
 
-  eliminarApartamento(id:string): Observable<ApartamentoModelo>{
+  eliminarApartamento(id: string): Observable<ApartamentoModelo> {
     return this.http.delete<ApartamentoModelo>(`${this.url}/apartamentos/${id}`);
   }
 }

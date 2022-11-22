@@ -11,12 +11,14 @@ import { ApartamentoService } from 'src/app/servicios/apartamento.service';
 })
 export class EditarApartamentoComponent implements OnInit {
   id: string= '';
+
   formApartamento: FormGroup = this.formBuilder.group({
     'id':['',[Validators.required]],
     'Numero':['',[Validators.required]],
     'TorreId':['',[Validators.required]],
     'PropietarioId':['',[Validators.required]]
   });
+  
   constructor(
     private formBuilder: FormBuilder,
     private apartamentoService: ApartamentoService,
@@ -59,6 +61,6 @@ export class EditarApartamentoComponent implements OnInit {
         error: (error) =>{
           console.log("error al buscar el apartamento");
         }
-      })
+      });
   }
 }

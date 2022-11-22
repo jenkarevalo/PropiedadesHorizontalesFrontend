@@ -21,7 +21,6 @@ export class CrearApartamentoComponent implements OnInit {
   listadoPropietarios: PropietarioModelo[]=[];
   listadoHabitantes: HabitanteModelo[]=[];
 
-
   formApartamento: FormGroup = this.formBuilder.group({
     'Numero':['',[Validators.required]],
     'TorreId':['',[Validators.required]],
@@ -30,9 +29,11 @@ export class CrearApartamentoComponent implements OnInit {
     'Habitante':['',[Validators.required]],
     'Torre': ['',[Validators.required]]
   });
+
   constructor(
     private formBuilder: FormBuilder,
     private apartamentoService: ApartamentoService,
+
     private torreService: TorreService,
     private habitanteService: HabitantesService,
     private propietarioService: PropietarioService, 
