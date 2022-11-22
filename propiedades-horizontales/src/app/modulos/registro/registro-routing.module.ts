@@ -38,7 +38,7 @@ const routes: Routes = [
     component: CrearConjuntoComponent,
   },
   {
-    path: "conjunto/editar-Conjunto/: id",
+    path: "conjunto/editar-Conjunto/:id",
     component: EditarConjuntoComponent
   },
   {

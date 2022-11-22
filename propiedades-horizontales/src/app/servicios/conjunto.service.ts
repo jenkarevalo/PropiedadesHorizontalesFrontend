@@ -47,7 +47,7 @@ export class ConjuntoService {
     });
   }
 
-  getConjuntoXId(id:string): Observable<ConjuntoModelo> {
+  getConjuntoXId(id: string): Observable<ConjuntoModelo> {
     return this.http.get<ConjuntoModelo>(`${this.url}/conjuntos/${id}`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`,
@@ -55,4 +55,4 @@ export class ConjuntoService {
     });
   }
 
-}
+} 
