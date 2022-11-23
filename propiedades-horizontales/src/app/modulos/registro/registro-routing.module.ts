@@ -37,7 +37,7 @@ const routes: Routes = [
     component: BuscarHabitanteComponent
   },
   {
-    path: "habitantes/detalle-Habitante",
+    path: "habitantes/detalle-Habitante/:id",
     component: DetalleHabitanteComponent
   },
   {

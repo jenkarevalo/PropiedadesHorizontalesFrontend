@@ -14,15 +14,15 @@ export class DetalleHabitanteComponent implements OnInit {
   constructor(
     private habitantesService: HabitantesService
   ) { 
-    this.getHabitanteXApartamento('id');
+    this.getlistaApato('id');
   }
 
   ngOnInit(): void {
   }
 
-  getHabitanteXApartamento(id: string){
+  getlistaApato(id: string){
     this.habitantesService.getHabitanteXApartamento(id)
-    .subscribe((habitantes) => {
+    .subscribe((habitantes: HabitanteModelo[]) => {
       this.listaHabitantes = habitantes;
     });
   }
