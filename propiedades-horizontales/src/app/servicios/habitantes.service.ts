@@ -53,4 +53,8 @@ export class HabitantesService {
       })
     });
   }
+
+  getHabitanteXApartamento(id: string): Observable<HabitanteModelo[]> {
+    return this.http.get<HabitanteModelo[]>(`${this.url}/habitantes/${id}/apartamento`);
+  }
 }

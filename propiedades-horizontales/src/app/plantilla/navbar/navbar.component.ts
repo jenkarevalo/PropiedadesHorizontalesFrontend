@@ -28,6 +28,8 @@ export class NavbarComponent implements OnInit {
         this.route.navigate(["/propietario/buscar-Propietario"]);
         this.route.navigate(["/torre/buscar-Torre"]);
         this.route.navigate(["/apartamento/buscar-Apartamento"]);
+        this.route.navigate(["/factura/buscar-Factura"]);
+
       });
   }
 

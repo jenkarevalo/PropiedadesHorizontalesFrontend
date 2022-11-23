@@ -21,7 +21,7 @@ export class PropietarioService {
   crearPropietario(propietario: PropietarioModelo): Observable<PropietarioModelo>{
     return this.http.post<PropietarioModelo>(`${this.url}/propietarios`, propietario,{
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`,
+        'Authorization': `Bearer $(this.token)}`
       })
     });
   }
@@ -29,13 +29,21 @@ export class PropietarioService {
   actualizarPropietario(propietario: PropietarioModelo): Observable<PropietarioModelo>{
     return this.http.put<PropietarioModelo>(`${this.url}/propietarios/${propietario.id}`, propietario,{
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`,
+        'Authorization': `Bearer $(this.token)}`
       })
     });
   }
 
   getPropietario(): Observable<PropietarioModelo[]>{
     return this.http.get<PropietarioModelo[]>(`${this.url}/propietarios`);
+  }
+
+  getPropietarioXId(id: string):Observable<PropietarioModelo> {
+    return this.http.get<PropietarioModelo>(`${this.url}/propietarios/${id}`,{
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })  
+    });
   }
 
 

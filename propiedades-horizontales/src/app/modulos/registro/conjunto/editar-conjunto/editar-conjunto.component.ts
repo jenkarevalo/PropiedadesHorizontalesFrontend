@@ -46,9 +46,9 @@ export class EditarConjuntoComponent implements OnInit {
       cuentaBancaria: this.formConjunto.controls['CuentaBancaria'].value,
       banco: this.formConjunto.controls['Banco'].value,
       nombreAdministrador: this.formConjunto.controls['NombreAdministrador'].value,
-      interesXMora: parseInt (this.formConjunto.controls['InteresXMora'].value),
+      interesXMora: parseInt(this.formConjunto.controls['InteresXMora'].value),
       inicioNumeroFactura: this.formConjunto.controls['InicioNumeroFactura'].value,
-      presupuestoActual: parseInt (this.formConjunto.controls['PresupuestoActual'].value),
+      presupuestoActual: parseInt(this.formConjunto.controls['PresupuestoActual'].value),
       email: this.formConjunto.controls['Email'].value,
       clave: this.formConjunto.controls['Clave'].value
     }
@@ -61,7 +61,9 @@ export class EditarConjuntoComponent implements OnInit {
           console.log("Error al guardar el conjunto");
         }
       });
+      
   }
+
 
   getConjuntos(){
     this.conjuntoService.getConjuntoXId(this.id)
@@ -84,5 +86,5 @@ export class EditarConjuntoComponent implements OnInit {
       }
     })
   }
-
 }
+

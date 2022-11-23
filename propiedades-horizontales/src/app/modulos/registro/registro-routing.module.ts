@@ -9,8 +9,11 @@ import { EditarConjuntoComponent } from './conjunto/editar-conjunto/editar-conju
 import { BuscarFacturaComponent } from './factura/buscar-factura/buscar-factura.component';
 import { CrearFacturaComponent } from './factura/crear-factura/crear-factura.component';
 import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.component';
+import { FactCreditoComponent } from './factura/fact-credito/fact-credito.component';
+import { FactDebitoComponent } from './factura/fact-debito/fact-debito.component';
 import { BuscarHabitanteComponent } from './habitantes/buscar-habitante/buscar-habitante.component';
 import { CrearHabitanteComponent } from './habitantes/crear-habitante/crear-habitante.component';
+import { DetalleHabitanteComponent } from './habitantes/detalle-habitante/detalle-habitante.component';
 import { EditarHabitanteComponent } from './habitantes/editar-habitante/editar-habitante.component';
 import { BuscarPropietarioComponent } from './propietario/buscar-propietario/buscar-propietario.component';
 import { CrearPropietarioComponent } from './propietario/crear-propietario/crear-propietario.component';
@@ -21,6 +24,7 @@ import { EditarTorreComponent } from './torre/editar-torre/editar-torre.componen
 
 const routes: Routes = [
    {
+
     path: "crear-Habitante",
      component: CrearHabitanteComponent
    },
@@ -31,6 +35,10 @@ const routes: Routes = [
   {
     path: "habitantes/buscar-Habitante",
     component: BuscarHabitanteComponent
+  },
+  {
+    path: "habitantes/detalle-Habitante",
+    component: DetalleHabitanteComponent
   },
   {
     path: "conjunto/crear-Conjunto",
@@ -93,6 +101,16 @@ const routes: Routes = [
   {
     path: "factura/buscar-Factura",
     component: BuscarFacturaComponent
+  },
+
+  {
+    path: "factura/factDebito",
+    component: FactDebitoComponent
+  },
+
+  {
+    path: "factura/factCredito",
+    component: FactCreditoComponent
   }
 ];
 
