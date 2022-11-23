@@ -25,15 +25,12 @@ export class CrearApartamentoComponent implements OnInit {
     'Numero':['',[Validators.required]],
     'TorreId':['',[Validators.required]],
     'PropietarioId':['',[Validators.required]],
-    'Propietario': ['',[Validators.required]],
     'Habitante':['',[Validators.required]],
-    'Torre': ['',[Validators.required]]
   });
 
   constructor(
     private formBuilder: FormBuilder,
     private apartamentoService: ApartamentoService,
-
     private torreService: TorreService,
     private habitanteService: HabitantesService,
     private propietarioService: PropietarioService, 

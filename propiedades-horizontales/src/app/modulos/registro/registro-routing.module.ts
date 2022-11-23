@@ -104,12 +104,12 @@ const routes: Routes = [
   },
 
   {
-    path: "factura/factDebito",
+    path: "factura/fact-debito",
     component: FactDebitoComponent
   },
 
   {
-    path: "factura/factCredito",
+    path: "factura/fact-credito",
     component: FactCreditoComponent
   }
 ];
