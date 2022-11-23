@@ -1,1 +1,42 @@
-<p>{{apartamentoHabitante.numero}}</p>
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+        <img src="assets/HabXApto.jpg" width="400" height="400">
+    </div>
+    <div class="card-content">
+        <span class="card-title activator black-text text-darken-4">Relaciòn Habitante-Apartamento<i
+                class="material-icons right">more_vert</i></span>
+    </div>
+    <div class="card-reveal">
+        <span class="card-title black-text text-darken-4">
+            <span class="card-title activator black-text text-darken-4">Informaciòn de Habitante con su Apartamento<i
+                    class="material-icons right">close</i></span>
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Primer Nombre</th>
+                        <th>Segundo Nombre</th>
+                        <th>Primer Apellido</th>
+                        <th>Segundo Apellido</th>
+                        <th>Documento</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let prop of listadoHabitantes">
+                        <td>{{prop.primerNombre}}</td>
+                        <td>{{prop.segundoNombre}}</td>
+                        <td>{{prop.primerApellido}}</td>
+                        <td>{{prop.segundoApellido}}</td>
+                        <td>{{prop.documento}}</td>
+                        <td>{{prop.telefono}}</td>
+                        <td>{{prop.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="card-content">
+                <p>Apartamento: {{apartamentoHabitante.numero}}</p>
+            </div>
+        </span>
+    </div>
+</div>

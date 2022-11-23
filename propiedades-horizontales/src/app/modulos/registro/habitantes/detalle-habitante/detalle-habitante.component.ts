@@ -10,6 +10,7 @@ import { HabitantesService } from 'src/app/servicios/habitantes.service';
   styleUrls: ['./detalle-habitante.component.css']
 })
 export class DetalleHabitanteComponent implements OnInit {
+  listadoHabitantes: HabitanteModelo[] = [];
   id: string = '';
 
   apartamentoHabitante: ApartamentoModelo = new ApartamentoModelo;
@@ -23,6 +24,7 @@ export class DetalleHabitanteComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.getHabitanteXApartamento();
+    this.getListadoHabitantes();
   }
 
   getHabitanteXApartamento(){
@@ -30,5 +32,12 @@ export class DetalleHabitanteComponent implements OnInit {
     .subscribe((apartamentos: ApartamentoModelo) => {
       this.apartamentoHabitante = apartamentos;
     });
+  }
+
+  getListadoHabitantes(){
+    this.habitantesService.getHabitantes()
+      .subscribe( (habitantes: HabitanteModelo[]) => {
+        this.listadoHabitantes = habitantes;
+      });
   }
 }
