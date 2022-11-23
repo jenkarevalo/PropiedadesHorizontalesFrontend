@@ -11,6 +11,7 @@ import { CrearFacturaComponent } from './factura/crear-factura/crear-factura.com
 import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.component';
 import { BuscarHabitanteComponent } from './habitantes/buscar-habitante/buscar-habitante.component';
 import { CrearHabitanteComponent } from './habitantes/crear-habitante/crear-habitante.component';
+import { DetalleHabitanteComponent } from './habitantes/detalle-habitante/detalle-habitante.component';
 import { EditarHabitanteComponent } from './habitantes/editar-habitante/editar-habitante.component';
 import { BuscarPropietarioComponent } from './propietario/buscar-propietario/buscar-propietario.component';
 import { CrearPropietarioComponent } from './propietario/crear-propietario/crear-propietario.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: "habitantes/buscar-Habitante",
     component: BuscarHabitanteComponent
+  },
+  {
+    path: "habitantes/detalle-Habitante",
+    component: DetalleHabitanteComponent
   },
   {
     path: "conjunto/crear-Conjunto",

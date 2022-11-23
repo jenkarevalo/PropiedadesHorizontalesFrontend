@@ -21,6 +21,7 @@ import { EditarTorreComponent } from './torre/editar-torre/editar-torre.componen
 import { CrearFacturaComponent } from './factura/crear-factura/crear-factura.component';
 import { BuscarFacturaComponent } from './factura/buscar-factura/buscar-factura.component';
 import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.component';
+import { DetalleHabitanteComponent } from './habitantes/detalle-habitante/detalle-habitante.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.
     EditarTorreComponent,
     CrearFacturaComponent,
     BuscarFacturaComponent,
-    EditarFacturaComponent
+    EditarFacturaComponent,
+    DetalleHabitanteComponent
   ],
   
   imports: [
