@@ -1,44 +1,44 @@
 <div class="row">
 
-    <div class="col s12 m11">
-      <div class="card">
-        <div class="card-image">
-          <img src="../../../../../assets/Factura.png" width="225" height="500">
-        </div>
-        <table class="striped">
-          <thead>
-            <tr>
-              <th>Fecha</th>
-              <th>Factura N°</th>
-              <th>Tipo de Nota</th>
-              <th>Valor </th>
-              <th>Detalle</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let fac of listadoFacturas">
-              <td>{{fac.fecha}}</td>
-              <td>{{fac.facturaNumero}}</td>
-              <td>{{fac.tipoNota}}</td>
-              <td>{{fac.valor}}</td>
-              <td>{{fac.detalle}}</td>
-              <td>{{fac.total}}</td>
-              <td>
-                <a routerLink='/registro/editar-Factura/{{fac.id}}'>
-                  <span>Editar</span>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <br><br>
-        <div class="card-action">
-          <a class="waves-effect waves-light black btn" routerLink="/registro/factura/fact-credito">Consultar Notas CR</a>
-        </div>
-        <div class="card-action">
-          <a class="waves-effect waves-light black btn" routerLink="/registro/factura/fact-debito">Consultar Notas DB</a>
-        </div>
+  <div class="col s12 m11">
+    <div class="card">
+      <div class="card-image">
+        <img src="../../../../../assets/Factura.png" width="225" height="500">
+      </div>
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Factura N°</th>
+            <th>Tipo de Nota</th>
+            <th>Valor </th>
+            <th>Detalle</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fac of listadoFacturas">
+            <td>{{fac.fecha}}</td>
+            <td>{{fac.facturaNumero}}</td>
+            <td>{{fac.tipoNota}}</td>
+            <td>{{fac.valor}}</td>
+            <td>{{fac.detalle}}</td>
+            <td>{{fac.total}}</td>
+            <td>
+              <a routerLink='/registro/editar-Factura/{{fac.id}}'>
+                <span>Editar</span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br><br>
+      <div class="card-action">
+        <a class="waves-effect waves-light black btn" routerLink="/registro/factura/fact-credito">Consultar Notas CR</a>
+      </div>
+      <div class="card-action">
+        <a class="waves-effect waves-light black btn" routerLink="/registro/factura/fact-debito">Consultar Notas DB</a>
       </div>
     </div>
   </div>
+</div>
