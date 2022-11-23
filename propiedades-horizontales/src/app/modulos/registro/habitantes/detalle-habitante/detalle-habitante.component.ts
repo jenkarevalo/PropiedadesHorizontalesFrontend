@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApartamentoModelo } from 'src/app/modelos/apartamento.modelo';
 import { HabitanteModelo } from 'src/app/modelos/habitantes.modelo';
 import { HabitantesService } from 'src/app/servicios/habitantes.service';
 
@@ -8,22 +10,27 @@ import { HabitantesService } from 'src/app/servicios/habitantes.service';
   styleUrls: ['./detalle-habitante.component.css']
 })
 export class DetalleHabitanteComponent implements OnInit {
+  id: string = '';
 
-  listaHabitantes: HabitanteModelo[] = [];
+  apartamentoHabitante: ApartamentoModelo = new ApartamentoModelo;
 
   constructor(
-    private habitantesService: HabitantesService
+    private habitantesService: HabitantesService,
+    private route: ActivatedRoute,
+
   ) { 
-    this.getHabitanteXApartamento('id');
+   
   }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.getHabitanteXApartamento();
   }
 
-  getHabitanteXApartamento(id: string){
-    this.habitantesService.getHabitanteXApartamento(id)
-    .subscribe((habitantes) => {
-      this.listaHabitantes = habitantes;
+  getHabitanteXApartamento(){
+    this.habitantesService.getHabitanteXApartamento(this.id)
+    .subscribe((apartamentos: ApartamentoModelo) => {
+      this.apartamentoHabitante = apartamentos;
     });
   }
 }

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ApartamentoModelo } from '../modelos/apartamento.modelo';
 import { HabitanteModelo } from '../modelos/habitantes.modelo';
 import { SeguridadService } from './seguridad.service';
 
@@ -54,7 +55,7 @@ export class HabitantesService {
     });
   }
 
-  getHabitanteXApartamento(id: string): Observable<HabitanteModelo[]> {
-    return this.http.get<HabitanteModelo[]>(`${this.url}/habitantes/${id}/apartamento`);
+  getHabitanteXApartamento(id: string): Observable<ApartamentoModelo> {
+    return this.http.get<ApartamentoModelo>(`${this.url}/habitantes/${id}/apartamento`);
   }
 }
