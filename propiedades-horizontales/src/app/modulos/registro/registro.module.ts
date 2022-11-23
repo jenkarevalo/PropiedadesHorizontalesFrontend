@@ -21,6 +21,7 @@ import { EditarTorreComponent } from './torre/editar-torre/editar-torre.componen
 import { CrearFacturaComponent } from './factura/crear-factura/crear-factura.component';
 import { BuscarFacturaComponent } from './factura/buscar-factura/buscar-factura.component';
 import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.component';
+import { DetalleHabitanteComponent } from './habitantes/detalle-habitante/detalle-habitante.component';
 import { FactDebitoComponent } from './factura/fact-debito/fact-debito.component';
 import { FactCreditoComponent } from './factura/fact-credito/fact-credito.component';
 
@@ -45,6 +46,7 @@ import { FactCreditoComponent } from './factura/fact-credito/fact-credito.compon
     CrearFacturaComponent,
     BuscarFacturaComponent,
     EditarFacturaComponent,
+    DetalleHabitanteComponent,
     FactDebitoComponent,
     FactCreditoComponent
   ],

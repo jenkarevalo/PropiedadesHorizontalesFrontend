@@ -13,6 +13,7 @@ import { FactCreditoComponent } from './factura/fact-credito/fact-credito.compon
 import { FactDebitoComponent } from './factura/fact-debito/fact-debito.component';
 import { BuscarHabitanteComponent } from './habitantes/buscar-habitante/buscar-habitante.component';
 import { CrearHabitanteComponent } from './habitantes/crear-habitante/crear-habitante.component';
+import { DetalleHabitanteComponent } from './habitantes/detalle-habitante/detalle-habitante.component';
 import { EditarHabitanteComponent } from './habitantes/editar-habitante/editar-habitante.component';
 import { BuscarPropietarioComponent } from './propietario/buscar-propietario/buscar-propietario.component';
 import { CrearPropietarioComponent } from './propietario/crear-propietario/crear-propietario.component';
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: "habitantes/buscar-Habitante",
     component: BuscarHabitanteComponent
+  },
+  {
+    path: "habitantes/detalle-Habitante/:id",
+    component: DetalleHabitanteComponent
   },
   {
     path: "conjunto/crear-Conjunto",

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ApartamentoModelo } from '../modelos/apartamento.modelo';
 import { HabitanteModelo } from '../modelos/habitantes.modelo';
 import { SeguridadService } from './seguridad.service';
 
@@ -52,5 +53,9 @@ export class HabitantesService {
         'Authorization': `Bearer ${this.token}`,
       })
     });
+  }
+
+  getHabitanteXApartamento(id: string): Observable<ApartamentoModelo> {
+    return this.http.get<ApartamentoModelo>(`${this.url}/habitantes/${id}/apartamento`);
   }
 }
