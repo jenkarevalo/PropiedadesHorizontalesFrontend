@@ -42,8 +42,8 @@ export class FacturaService {
     });
   }
 
-  getNotaDb(): Observable<FacturaModelo> {
-    return this.http.get<FacturaModelo>(`${this.url}/notas-debito`, {
+  getNotaDb(): Observable<FacturaModelo[]> {
+    return this.http.get<FacturaModelo[]>(`${this.url}/notas-debito`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`,
       })
@@ -51,8 +51,8 @@ export class FacturaService {
   }
 
 
-  getNotaCr(): Observable<FacturaModelo> {
-    return this.http.get<FacturaModelo>(`${this.url}/notas-credito`, {
+  getNotaCr(): Observable<FacturaModelo[]> {
+    return this.http.get<FacturaModelo[]>(`${this.url}/notas-credito`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`,
       })
