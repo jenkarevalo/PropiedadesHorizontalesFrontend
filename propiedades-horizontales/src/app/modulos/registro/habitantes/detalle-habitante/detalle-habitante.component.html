@@ -10,30 +10,54 @@
         <span class="card-title black-text text-darken-4">
             <span class="card-title activator black-text text-darken-4">Informaciòn de Habitante con su Apartamento<i
                     class="material-icons right">close</i></span>
-            <table class="striped">
-                <thead>
-                    <tr>
-                        <th>Primer Nombre</th>
-                        <th>Segundo Nombre</th>
-                        <th>Primer Apellido</th>
-                        <th>Segundo Apellido</th>
-                        <th>Documento</th>
-                        <th>Telefono</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let prop of listadoHabitantes">
-                        <td>{{prop.primerNombre}}</td>
-                        <td>{{prop.segundoNombre}}</td>
-                        <td>{{prop.primerApellido}}</td>
-                        <td>{{prop.segundoApellido}}</td>
-                        <td>{{prop.documento}}</td>
-                        <td>{{prop.telefono}}</td>
-                        <td>{{prop.email}}</td>
-                    </tr>
-                </tbody>
-            </table>
+                    <section class="container">
+                        <div class="row registro-titulo">
+                            <div class="col s12">
+                                <h2 class="center-align">Regístrate</h2>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="container">
+                        <div class="row ">
+                            <div class="col s12">
+                                <div class="card-panel">
+                                    <form [formGroup]="formHabitanteApto">
+                                        <input formControlName="id" type="text" readonly>
+                                        <div class="row">
+                                            <div class="input-field col s12 m6">
+                                                <input formControlName="PrimerNombre" placeholder="" id="primerNombre" type="text" class="validate">
+                                                <label for="primerNombre" class="active">Primer Nombre</label>
+                                            </div>
+                                            <div class="input-field col s12 m6">
+                                                <input formControlName="SegundoNombre"  placeholder="" id="segundoNombre" type="text" class="validate">
+                                                <label for="segundoNombre" class="active">Segundo Nombre</label>
+                                            </div>
+                                            <div class="input-field col s12 m6">
+                                                <input formControlName="PrimerApellido"  id="primerApellido" type="text" class="validate">
+                                                <label for="primerApellido" class="active">Primer Apellido</label>
+                                            </div>
+                                            <div class="input-field col s12 m6">
+                                                <input formControlName="SegundoApellido"  id="segundoApellido" type="text" class="validate">
+                                                <label for="segundoApellido" class="active">Segundo Apellido</label>
+                                            </div>
+                                            <div class="input-field col s12 m6">
+                                                <input formControlName="Documento" id="documento" type="text" class="validate">
+                                                <label for="text" class="active">Documento</label>
+                                            </div>
+                                            <div class="input-field col s12 m6">
+                                                <input formControlName="Telefono" id="telefono" type="text" class="validate">
+                                                <label for="text" class="active">Telefono</label>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <input formControlName="Email" id="email" type="email" class="validate">
+                                                <label for="email" class="active">Email</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
             <div class="card-content">
                 <p>Apartamento: {{apartamentoHabitante.numero}}</p>
             </div>

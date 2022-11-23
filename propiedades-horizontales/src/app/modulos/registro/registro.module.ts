@@ -24,6 +24,7 @@ import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.
 import { DetalleHabitanteComponent } from './habitantes/detalle-habitante/detalle-habitante.component';
 import { FactDebitoComponent } from './factura/fact-debito/fact-debito.component';
 import { FactCreditoComponent } from './factura/fact-credito/fact-credito.component';
+import { DetalleApartamentoComponent } from './apartamento/detalle-apartamento/detalle-apartamento.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FactCreditoComponent } from './factura/fact-credito/fact-credito.compon
     EditarFacturaComponent,
     DetalleHabitanteComponent,
     FactDebitoComponent,
-    FactCreditoComponent
+    FactCreditoComponent,
+    DetalleApartamentoComponent
   ],
   
   imports: [
