@@ -1,7 +1,7 @@
 <section class="container">
   <div class="row registro-titulo">
       <div class="col s12">
-          <h2 class="center-align">Regístrate</h2>
+          <h2 class="center-align">Editar Apartamento</h2>
       </div>
   </div>
 </section>
@@ -10,7 +10,7 @@
       <div class="col s12">
           <div class="card-panel">
               <form [formGroup]="formApartamento" (ngSubmit)="guardarApartamento()">
-                  <input formControlName="id" type="text" readonly>
+                <input formControlName="id" type="text" readonly>
                   <div class="row">
                       <div class="input-field col s12 m6">
                           <input formControlName="Numero" placeholder="" id="Numero" type="text" class="validate">

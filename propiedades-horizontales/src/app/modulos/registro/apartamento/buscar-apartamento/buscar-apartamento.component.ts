@@ -18,14 +18,11 @@ export class BuscarApartamentoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getListadoApartamentos(){
-    this.apartamentoService.obtenerApartamentos()
-      .subscribe((apartamentos: ApartamentoModelo[])=>{ 
+  getListadoApartamentos() {
+    this.apartamentoService.getApartamento()
+      .subscribe((apartamentos: ApartamentoModelo[]) => {
         this.listadoApartamentos = apartamentos;
-        console.log("Total de apartamentos" + this.listadoApartamentos.length);
-      }, (error) =>{
-        console.log("Se genero un error al consultar el listado de apartamentos");
-      } )
+      });
   }
+} 
 
-}

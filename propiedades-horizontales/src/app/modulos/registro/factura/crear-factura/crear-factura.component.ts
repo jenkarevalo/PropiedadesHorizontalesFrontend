@@ -10,7 +10,7 @@ import { FacturaService } from 'src/app/servicios/factura.service';
   styleUrls: ['./crear-factura.component.css']
 })
 export class CrearFacturaComponent implements OnInit {
-  formFactura: FormGroup = this.formBuilder.group({
+  formFact: FormGroup = this.formBuilder.group({
     'Fecha': ['', [Validators.required]],
     'FacturaNumero': ['', [Validators.required]],
     'TipoNota': ['', [Validators.required]],
@@ -31,13 +31,14 @@ export class CrearFacturaComponent implements OnInit {
 
   guardarFactura() {
     let factura: FacturaModelo = {
-      fecha: this.formFactura.controls['Fecha'].value,
-      facturaNumero: this.formFactura.controls['FacturaNumero'].value,
-      tipoNota: this.formFactura.controls['TipoNota'].value,
-      valor: parseInt(this.formFactura.controls['Valor'].value),
-      detalle: this.formFactura.controls['Detalle'].value,
-      total: parseInt(this.formFactura.controls['Total'].value),
+      fecha: this.formFact.controls['Fecha'].value,
+      facturaNumero: this.formFact.controls['FacturaNumero'].value,
+      tipoNota: this.formFact.controls['TipoNota'].value,
+      valor: parseInt(this.formFact.controls['Valor'].value),
+      detalle: this.formFact.controls['Detalle'].value,
+      total: parseInt(this.formFact.controls['Total'].value),
     }
+    
     this.facturaService.crearFactura(factura)
       .subscribe({
         next: (datos) => {
@@ -45,6 +46,7 @@ export class CrearFacturaComponent implements OnInit {
         },
         error: (error) => {
           console.log("Error al guardar la factura");
+          console.log(error);
         }
       });
   }

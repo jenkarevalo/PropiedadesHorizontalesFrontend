@@ -9,6 +9,8 @@ import { EditarConjuntoComponent } from './conjunto/editar-conjunto/editar-conju
 import { BuscarFacturaComponent } from './factura/buscar-factura/buscar-factura.component';
 import { CrearFacturaComponent } from './factura/crear-factura/crear-factura.component';
 import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.component';
+import { FactCreditoComponent } from './factura/fact-credito/fact-credito.component';
+import { FactDebitoComponent } from './factura/fact-debito/fact-debito.component';
 import { BuscarHabitanteComponent } from './habitantes/buscar-habitante/buscar-habitante.component';
 import { CrearHabitanteComponent } from './habitantes/crear-habitante/crear-habitante.component';
 import { EditarHabitanteComponent } from './habitantes/editar-habitante/editar-habitante.component';
@@ -59,11 +61,11 @@ const routes: Routes = [
     component: BuscarPropietarioComponent
   },
   { 
-    path: "crear-Apartamento",
+    path: "apartamento/crear-Apartamento",
     component: CrearApartamentoComponent
   },
   {
-    path: "editar-Apartamento/: id",
+    path: "editar-Apartamento/:id",
     component: EditarApartamentoComponent
   },
   {
@@ -76,7 +78,7 @@ const routes: Routes = [
     component: CrearTorreComponent
   },
   {
-    path: "editar-Torre/: id",
+    path: "editar-Torre/:id",
     component: EditarTorreComponent
   },
   {
@@ -94,6 +96,16 @@ const routes: Routes = [
   {
     path: "factura/buscar-Factura",
     component: BuscarFacturaComponent
+  },
+
+  {
+    path: "factura/factDebito",
+    component: FactDebitoComponent
+  },
+
+  {
+    path: "factura/factCredito",
+    component: FactCreditoComponent
   }
 ];
 

@@ -10,9 +10,9 @@ import { FacturaService } from 'src/app/servicios/factura.service';
   styleUrls: ['./editar-factura.component.css']
 })
 export class EditarFacturaComponent implements OnInit {
-  id: string = '';
+  id: string ='';
 
-  formFactura: FormGroup = this.formBuilder.group({
+  formFact: FormGroup = this.formBuilder.group({
     'id': ['', [Validators.required]],
     'Fecha': ['', [Validators.required]],
     'FacturaNumero': ['', [Validators.required]],
@@ -36,12 +36,13 @@ export class EditarFacturaComponent implements OnInit {
 
   guardarFactura() {
     let factura: FacturaModelo = {
-      fecha: this.formFactura.controls['Fecha'].value,
-      facturaNumero: this.formFactura.controls['FacturaNumero'].value,
-      tipoNota: this.formFactura.controls['TipoNota'].value,
-      valor: parseInt(this.formFactura.controls['Valor'].value),
-      detalle: this.formFactura.controls['Detalle'].value,
-      total: parseInt(this.formFactura.controls['Total'].value),
+      id: this.formFact.controls['id'].value,
+      fecha: this.formFact.controls['Fecha'].value,
+      facturaNumero: this.formFact.controls['FacturaNumero'].value,
+      tipoNota: this.formFact.controls['TipoNota'].value,
+      valor: parseInt(this.formFact.controls['Valor'].value),
+      detalle: this.formFact.controls['Detalle'].value,
+      total: parseInt(this.formFact.controls['Total'].value),
     }
     this.facturaService.actualizarFactura(factura)
       .subscribe({
@@ -54,17 +55,17 @@ export class EditarFacturaComponent implements OnInit {
       });
   }
 
-  getFactura(){
+  getFactura() {
     this.facturaService.getFacturaXId(this.id)
       .subscribe({
         next: (factura) => {
-          this.formFactura.controls['id'].setValue(factura.id);
-          this.formFactura.controls['PrimerNombre'].setValue(factura.fecha);
-          this.formFactura.controls['SegundoNombre'].setValue(factura.facturaNumero);
-          this.formFactura.controls['PrimerApellido'].setValue(factura.tipoNota);
-          this.formFactura.controls['SegundoApellido'].setValue(factura.valor);
-          this.formFactura.controls['Documento'].setValue(factura.detalle);
-          this.formFactura.controls['Telefono'].setValue(factura.total);
+          this.formFact.controls['id'].setValue(factura.id);
+          this.formFact.controls['Fecha'].setValue(factura.fecha);
+          this.formFact.controls['FacturaNumero'].setValue(factura.facturaNumero);
+          this.formFact.controls['TipoNota'].setValue(factura.tipoNota);
+          this.formFact.controls['Valor'].setValue(factura.valor);
+          this.formFact.controls['Detalle'].setValue(factura.detalle);
+          this.formFact.controls['Total'].setValue(factura.total);
         },
         error: (error) => {
           console.log("error al buscar la factura")

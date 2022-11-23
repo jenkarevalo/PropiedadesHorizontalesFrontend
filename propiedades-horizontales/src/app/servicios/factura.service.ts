@@ -24,17 +24,13 @@ export class FacturaService {
 
   crearFactura(factura: FacturaModelo): Observable<FacturaModelo> {
     return this.http.post<FacturaModelo>(`${this.url}/facturas`, factura, {
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`,
-      })
+      
     });
   }
 
   actualizarFactura(factura: FacturaModelo): Observable<FacturaModelo> {
     return this.http.put<FacturaModelo>(`${this.url}/facturas/${factura.id}`, factura, {
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`,
-      })
+     
     });
   }
 
