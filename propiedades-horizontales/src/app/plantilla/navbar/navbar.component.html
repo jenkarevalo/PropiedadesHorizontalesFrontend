@@ -23,9 +23,13 @@
                 <li *ngIf="seInicioSesion===true">
                     <a routerLink="/registro/apartamento/buscar-Apartamento">Apartamentos</a>
                 </li>
+                <li *ngIf="seInicioSesion===true">
+                    <a routerLink="/registro/factura/buscar-Factura">Factura</a>
+                </li>
                 <li *ngIf="seInicioSesion===false">
                     <a routerLink="/seguridad/login" class="btn grey darken-2 waves-effect waves-light">Iniciar Sesión</a>
                 </li>
+                
                 <li *ngIf="seInicioSesion===true">
                     <a (click)="cerrarSesion()">Cerrar Sesion</a>
                 </li>

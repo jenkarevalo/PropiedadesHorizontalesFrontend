@@ -12,10 +12,10 @@ const cryptoJS = require('crypto-js');
 })
 export class CrearPropietarioComponent implements OnInit {
   formPropietario: FormGroup = this.formBuilder.group( {
-    'PrimerNombre': ['', [Validators.required]],
-    'SegundoNombre': ['', [Validators.required]],
-    'PrimerApellido': ['', [Validators.required]],
-    'SegundoApellido': ['', [Validators.required]],
+    'Primer Nombre': ['', [Validators.required]],
+    'Segundo Nombre': ['', [Validators.required]],
+    'Primer Apellido': ['', [Validators.required]],
+    'Segundo Apellido': ['', [Validators.required]],
     'Documento': ['', [Validators.required]],
     'Telefono': ['', [Validators.required]],
     'Email': ['', [Validators.required]],
@@ -35,10 +35,10 @@ export class CrearPropietarioComponent implements OnInit {
 
   guardarPropietario() {
     let propietario: PropietarioModelo={
-      primerNombre: this.formPropietario.controls['PrimerNombre'].value,
-      segundoNombre: this.formPropietario.controls['SegundoNombre'].value,
-      primerApellido: this.formPropietario.controls['PrimerApellido'].value,
-      segundoApellido: this.formPropietario.controls['SegundoApellido'].value,
+      primerNombre: this.formPropietario.controls['Primer Nombre'].value,
+      segundoNombre: this.formPropietario.controls['Segundo Nombre'].value,
+      primerApellido: this.formPropietario.controls['Primer Apellido'].value,
+      segundoApellido: this.formPropietario.controls['Segundo Apellido'].value,
       documento: this.formPropietario.controls['Documento'].value,
       telefono: this.formPropietario.controls['Telefono'].value,
       email: this.formPropietario.controls['Email'].value,

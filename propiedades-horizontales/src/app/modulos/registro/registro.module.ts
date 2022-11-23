@@ -22,6 +22,8 @@ import { CrearFacturaComponent } from './factura/crear-factura/crear-factura.com
 import { BuscarFacturaComponent } from './factura/buscar-factura/buscar-factura.component';
 import { EditarFacturaComponent } from './factura/editar-factura/editar-factura.component';
 import { DetalleHabitanteComponent } from './habitantes/detalle-habitante/detalle-habitante.component';
+import { FactDebitoComponent } from './factura/fact-debito/fact-debito.component';
+import { FactCreditoComponent } from './factura/fact-credito/fact-credito.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { DetalleHabitanteComponent } from './habitantes/detalle-habitante/detall
     CrearFacturaComponent,
     BuscarFacturaComponent,
     EditarFacturaComponent,
-    DetalleHabitanteComponent
+    DetalleHabitanteComponent,
+    FactDebitoComponent,
+    FactCreditoComponent
   ],
   
   imports: [
