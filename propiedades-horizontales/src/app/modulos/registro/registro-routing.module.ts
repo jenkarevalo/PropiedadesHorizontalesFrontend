@@ -17,6 +17,7 @@ import { DetalleHabitanteComponent } from './habitantes/detalle-habitante/detall
 import { EditarHabitanteComponent } from './habitantes/editar-habitante/editar-habitante.component';
 import { BuscarPropietarioComponent } from './propietario/buscar-propietario/buscar-propietario.component';
 import { CrearPropietarioComponent } from './propietario/crear-propietario/crear-propietario.component';
+import { DetallePropietarioComponent } from './propietario/detalle-propietario/detalle-propietario.component';
 import { EditarPropietarioComponent } from './propietario/editar-propietario/editar-propietario.component';
 import { BuscarTorreComponent } from './torre/buscar-torre/buscar-torre.component';
 import { CrearTorreComponent } from './torre/crear-torre/crear-torre.component';
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path: "propietario/buscar-Propietario",
     component: BuscarPropietarioComponent
+  },
+  {
+    path: "detalle-Propietario/:id",
+    component: DetallePropietarioComponent
   },
   { 
     path: "apartamento/crear-Apartamento",

@@ -25,6 +25,7 @@ import { DetalleHabitanteComponent } from './habitantes/detalle-habitante/detall
 import { FactDebitoComponent } from './factura/fact-debito/fact-debito.component';
 import { FactCreditoComponent } from './factura/fact-credito/fact-credito.component';
 import { DetalleApartamentoComponent } from './apartamento/detalle-apartamento/detalle-apartamento.component';
+import { DetallePropietarioComponent } from './propietario/detalle-propietario/detalle-propietario.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { DetalleApartamentoComponent } from './apartamento/detalle-apartamento/d
     DetalleHabitanteComponent,
     FactDebitoComponent,
     FactCreditoComponent,
-    DetalleApartamentoComponent
+    DetalleApartamentoComponent,
+    DetallePropietarioComponent
   ],
   
   imports: [

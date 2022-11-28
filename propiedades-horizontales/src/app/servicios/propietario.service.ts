@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { PropietarioModelo } from '../modelos/propietario.modelo';
 import { SeguridadService } from './seguridad.service';
 import { Observable } from 'rxjs';
+import { ApartamentoModelo } from '../modelos/apartamento.modelo';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,8 @@ export class PropietarioService {
       })  
     });
   }
-
+  getPropietarioApartamento(id: string): Observable<ApartamentoModelo[]> {
+    return this.http.get<ApartamentoModelo[]>(`${this.url}/propietarios/${id}/apartamentos`);
+  }
 
 }
